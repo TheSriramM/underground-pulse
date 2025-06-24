@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://bicafey2ocfve"]
+
+[ext_resource type="Script" uid="uid://1wlc1a3e7chq" path="res://Scripts/UI/u_died.gd" id="1_ic27l"]
+[ext_resource type="Texture2D" uid="uid://chtcvfpgcxeqa" path="res://Images/u_died_background.png" id="1_iguay"]
+
+[node name="u_died" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ic27l")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 650.0
+texture = ExtResource("1_iguay")
+
+[node name="Label" type="Label" parent="background"]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 74.0
+offset_right = 804.0
+offset_bottom = 202.0
+theme_override_font_sizes/font_size = 80
+text = "You Died!"
+
+[node name="buttonContainer" type="VBoxContainer" parent="background"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 421.0
+offset_top = 270.0
+offset_right = 728.0
+offset_bottom = 386.0
+
+[node name="restart" type="Button" parent="background/buttonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Restart"
+
+[node name="quit" type="Button" parent="background/buttonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[connection signal="pressed" from="background/buttonContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="background/buttonContainer/quit" to="." method="_on_quit_pressed"]

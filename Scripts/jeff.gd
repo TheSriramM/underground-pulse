@@ -13,4 +13,7 @@ func _physics_process(delta: float) -> void:
 func _on_player_area_entered(area: Area2D) -> void:
 	if area.name == "laserArea":
 		health -= 20
-		healthChanged.emit()
+		if health > 0:
+			healthChanged.emit()
+		else:
+			get_tree().call_deferred("change_scene_to_file", "res://Scenes/u_died.tscn")
