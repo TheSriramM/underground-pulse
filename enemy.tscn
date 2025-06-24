@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnq77xu8ap7a8"]
+[gd_scene load_steps=5 format=3 uid="uid://dnq77xu8ap7a8"]
 
 [ext_resource type="Texture2D" uid="uid://qcl4rdvr3wi7" path="res://Sprites/purple_enemy.png" id="1_7k104"]
 [ext_resource type="Texture2D" uid="uid://h6i346pyv0f" path="res://Sprites/larger_fov.png" id="2_4gyqm"]
@@ -6,17 +6,30 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_7k104"]
 radius = 39.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4gyqm"]
+radius = 37.108
+
 [node name="enemy" type="CharacterBody2D"]
+motion_mode = 1
+wall_min_slide_angle = 0.0
 
 [node name="fov" type="Sprite2D" parent="."]
-position = Vector2(100, 12)
+position = Vector2(105, 16)
 rotation = -1.5708
-scale = Vector2(2, 2)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_4gyqm")
 
 [node name="sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_7k104")
 
 [node name="collision" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(2, 1)
 shape = SubResource("CircleShape2D_7k104")
+
+[node name="enemyArea" type="Area2D" parent="."]
+visible = false
+
+[node name="enemyCol" type="CollisionShape2D" parent="enemyArea"]
+position = Vector2(2, 2)
+shape = SubResource("CircleShape2D_4gyqm")
