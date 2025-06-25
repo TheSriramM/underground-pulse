@@ -4,6 +4,7 @@ var right = true
 var playerEntered = false
 var speed = 200
 var fov_rot = Vector2(-95, 0) 
+var lvl2_boundary_exceeded = false
 var bulletScene = preload("res://Scenes/enemy_laser.tscn")
 
 func _ready() -> void:
@@ -24,36 +25,34 @@ func _physics_process(_delta: float) -> void:
 func _shoot():
 	$shootingRate.start()
 
-
-func _on_area_1_area_entered(area: Area2D) -> void:
+func _on_enemy_4_area_2_area_entered(area: Area2D) -> void:
 	if area.get_parent() == self:
 		right = false 
 		$fov.rotation_degrees = 90
 		$fov.position = fov_rot
 		$fov_area.rotation_degrees = 180
-		print("Changing to left")
 
-func _on_area_2_area_entered(area: Area2D) -> void:
+func _on_enemy_6_area_2_area_entered(area: Area2D) -> void:
 	if area.get_parent() == self:
-		right = true 
+		right = true
 		$fov.rotation_degrees = -90
 		$fov.position = Vector2(100, 12)
 		$fov_area.rotation_degrees = 0
-		print("Changing to right")
 
 func _on_fov_area_area_entered(area: Area2D) -> void:
 	if area.name == "playerArea":
 		playerEntered = true
 
 func _on_shooting_timer_timeout() -> void:
-	playerEntered=true
+	playerEntered = true
 
 func _on_shooting_rate_timeout() -> void:
-	# Real shoot function
-	var bullet = bulletScene.instantiate()
-	call_deferred("add_child", bullet)
-	# Get the direction towards the player
-	bullet.set_deferred("direction", global_position.direction_to(get_parent().get_parent().get_child(2).global_position))
-	bullet.position = position
-	bullet.show()
-	print("shooting")
+	if not lvl2_boundary_exceeded:
+		print("generating")
+		# Real shoot function
+		var bullet = bulletScene.instantiate()
+		call_deferred("add_child", bullet)
+		# Get the direction towards the player
+		bullet.set_deferred("direction", global_position.direction_to(get_parent().get_parent().get_child(2).global_position))
+		bullet.position = global_position
+		bullet.show()

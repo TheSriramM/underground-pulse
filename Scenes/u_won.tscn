@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8wyu8mql1dei"]
+
+[ext_resource type="Script" uid="uid://ci76tx72iu8x3" path="res://Scripts/UI/u_won.gd" id="1_1wi0n"]
+[ext_resource type="Texture2D" uid="uid://dr7oix8naiju0" path="res://Images/finish_menu_background.png" id="1_40aos"]
+[ext_resource type="Texture2D" uid="uid://sbushi05j51h" path="res://Sprites/trophy_image-removebg-preview.png" id="3_xqamk"]
+
+[node name="u_won" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1wi0n")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1160.0
+offset_bottom = 646.0
+texture = ExtResource("1_40aos")
+
+[node name="trophy" type="Sprite2D" parent="background"]
+position = Vector2(932, 487)
+texture = ExtResource("3_xqamk")
+
+[node name="you_won" type="Label" parent="background"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 26.0
+offset_right = 1195.0
+offset_bottom = 269.0
+theme_override_font_sizes/font_size = 80
+text = "You collected the orb!"
+
+[node name="credits" type="Label" parent="background"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 166.0
+offset_right = 1435.0
+offset_bottom = 248.0
+theme_override_font_sizes/font_size = 23
+text = "Thanks to you, humanity now has a close to unlimited source of energy that can be harnessed"
+
+[node name="buttons" type="VBoxContainer" parent="background"]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 253.0
+offset_right = 749.0
+offset_bottom = 448.0
+
+[node name="retry" type="Button" parent="background/buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Retry"
+
+[node name="quit" type="Button" parent="background/buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[node name="game_timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="pressed" from="background/buttons/retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="background/buttons/quit" to="." method="_on_quit_pressed"]
