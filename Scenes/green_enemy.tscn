@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsgx7cdve78uk"]
+
+[ext_resource type="Texture2D" uid="uid://1hej8moblrdc" path="res://Sprites/green_enemy.png" id="1_kjqof"]
+[ext_resource type="Texture2D" uid="uid://bn0yfwfbvw57l" path="res://Sprites/pink_enem_area.png" id="1_tsy4v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsy4v"]
+size = Vector2(140, 175)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_powj0"]
+size = Vector2(89, 54)
+
+[node name="green_enemy" type="CharacterBody2D"]
+
+[node name="PinkEnemArea" type="Sprite2D" parent="."]
+position = Vector2(-3.99998, -4.00002)
+scale = Vector2(5, 5)
+texture = ExtResource("1_tsy4v")
+
+[node name="sprite" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("1_kjqof")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(-23, -4.5)
+shape = SubResource("RectangleShape2D_tsy4v")
+
+[node name="another_col" type="CollisionShape2D" parent="."]
+position = Vector2(91.5, -3)
+shape = SubResource("RectangleShape2D_powj0")
