@@ -35,6 +35,7 @@ func _on_area_2_entered(area: Area2D) -> void:
 func _on_fov_area_entered(area: Area2D) -> void:
 	if area.name == "playerArea":
 		playerEntered = true
+		$PinkEnemArea.hide()
 
 func _on_shooting_timer_timeout() -> void:
 	playerEntered = true

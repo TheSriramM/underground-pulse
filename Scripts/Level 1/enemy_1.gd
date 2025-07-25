@@ -5,6 +5,7 @@ var playerEntered = false
 var speed = 200
 var fov_rot = Vector2(-95, 0) 
 var lvl1_boundary_exceeded = false
+var enem_annoyed = false
 var bulletScene = preload("res://Scenes/enemy_laser.tscn")
 
 func _ready() -> void:
@@ -25,7 +26,6 @@ func _physics_process(_delta: float) -> void:
 func _shoot():
 	$shootingRate.start()
 
-
 func _on_area_1_area_entered(area: Area2D) -> void:
 	if area.get_parent() == self:
 		right = false 
@@ -43,6 +43,8 @@ func _on_area_2_area_entered(area: Area2D) -> void:
 func _on_fov_area_area_entered(area: Area2D) -> void:
 	if area.name == "playerArea":
 		playerEntered = true
+		enem_annoyed = true
+		$fov.hide()
 
 func _on_shooting_timer_timeout() -> void:
 	playerEntered=true

@@ -46,6 +46,7 @@ func _on_enemy3_area_entered(area: Area2D) -> void:
 func _on_fov_area_entered(area: Area2D) -> void:
 	if area.name == "playerArea":
 		playerEntered = true
+		$fov.hide()
 
 
 func _on_shooting_timer_timeout() -> void:
