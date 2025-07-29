@@ -29,13 +29,9 @@ func _on_player_area_entered(area: Area2D) -> void:
 		else:
 			get_tree().call_deferred("change_scene_to_file", "res://Scenes/u_died.tscn")
 
-
-func _on_lvl_boundary_area_entered(_area: Area2D) -> void:
-	respawn = Vector2(500,0)
-
-func _on_sigma_area_area_entered(area: Area2D) -> void:
-	if area.get_parent() == self:
-		get_tree().call_deferred("change_scene_to_file", "res://Scenes/u_won.tscn")
+func _on_lvl_boundary_area_entered(area: Area2D) -> void:
+	if area.name == "playerArea":
+		get_tree().call_deferred("change_scene_to_file", "res://Scenes/shop.tscn")
 
 func slow_down():
 	print("e")

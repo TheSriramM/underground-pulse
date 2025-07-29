@@ -1,0 +1,138 @@
+[gd_scene load_steps=8 format=3 uid="uid://cw1yglwbk17sq"]
+
+[ext_resource type="Script" uid="uid://bqjy4prnvyagp" path="res://Scripts/shop.gd" id="1_a0mxf"]
+[ext_resource type="Theme" uid="uid://dehhs868h2q7i" path="res://UI-assets/default.tres" id="2_2shtd"]
+[ext_resource type="FontFile" uid="uid://dm2e0fgq0n617" path="res://UI-assets/Jersey15-Regular.ttf" id="2_fdj0q"]
+[ext_resource type="Texture2D" uid="uid://ccpnfhejrtvpl" path="res://UI-assets/Tilesheets/Large tiles/Thin outline/tilemap.png" id="3_io27d"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fdj0q"]
+texture = ExtResource("3_io27d")
+texture_margin_left = 2.0
+texture_margin_top = 1.0
+texture_margin_right = 2.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(132.188, 32.6642, 32.1528, 33.5423)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3ps1r"]
+texture = ExtResource("3_io27d")
+texture_margin_left = 1.0
+texture_margin_right = 1.0
+region_rect = Rect2(32.409, 0, 32.7712, 32.4933)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k6jq0"]
+texture = ExtResource("3_io27d")
+texture_margin_left = 5.0
+texture_margin_right = 5.0
+region_rect = Rect2(131.108, 64.879, 33.1567, 33.9278)
+
+[node name="shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a0mxf")
+
+[node name="shop" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 1153.0
+offset_bottom = 131.0
+theme_override_fonts/font = ExtResource("2_fdj0q")
+theme_override_font_sizes/font_size = 100
+text = "🛍️Shop🛍️"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="money" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 123.0
+offset_right = 1154.0
+offset_bottom = 224.0
+theme_override_fonts/font = ExtResource("2_fdj0q")
+theme_override_font_sizes/font_size = 80
+horizontal_alignment = 1
+
+[node name="continue" type="Button" parent="."]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 489.0
+offset_right = 735.0
+offset_bottom = 576.0
+theme = ExtResource("2_2shtd")
+theme_override_fonts/font = ExtResource("2_fdj0q")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxTexture_fdj0q")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3ps1r")
+theme_override_styles/normal = SubResource("StyleBoxTexture_k6jq0")
+text = "Continue"
+
+[node name="speed" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 273.0
+offset_right = 374.0
+offset_bottom = 359.0
+theme_override_fonts/normal_font = ExtResource("2_fdj0q")
+theme_override_font_sizes/normal_font_size = 40
+text = "15% speed increase"
+
+[node name="health" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 499.0
+offset_top = 269.0
+offset_right = 783.0
+offset_bottom = 355.0
+theme_override_fonts/normal_font = ExtResource("2_fdj0q")
+theme_override_font_sizes/normal_font_size = 40
+text = "15% health increase"
+
+[node name="grenade" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 850.0
+offset_top = 297.0
+offset_right = 1134.0
+offset_bottom = 383.0
+theme_override_fonts/normal_font = ExtResource("2_fdj0q")
+theme_override_font_sizes/normal_font_size = 40
+text = "x1 Grenade"
+
+[node name="speed_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 367.0
+offset_right = 231.0
+offset_bottom = 443.0
+theme_override_fonts/font = ExtResource("2_fdj0q")
+theme_override_font_sizes/font_size = 50
+text = "🏃‍♂️"
+
+[node name="health_button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.015
+anchor_bottom = 0.025
+offset_left = 492.0
+offset_top = 370.0
+offset_right = 625.72
+offset_bottom = 429.8
+theme_override_fonts/font = ExtResource("2_fdj0q")
+theme_override_font_sizes/font_size = 50
+text = "❤️‍🩹"
+
+[node name="grenade_button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.015
+anchor_bottom = 0.025
+offset_left = 854.0
+offset_top = 368.0
+offset_right = 987.72
+offset_bottom = 427.8
+theme_override_fonts/font = ExtResource("2_fdj0q")
+theme_override_font_sizes/font_size = 50
+text = "💣"
+
+[connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]
