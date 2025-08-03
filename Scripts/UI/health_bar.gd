@@ -1,9 +1,8 @@
 extends ProgressBar
 
-var player
+@export var player : CharacterBody2D
 
 func _ready() -> void:
-	player = get_parent().get_parent().get_child(2)
 	player.healthChanged.connect(_update)
 	_update()
 

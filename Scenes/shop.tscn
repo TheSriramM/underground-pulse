@@ -30,6 +30,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 7.0
+offset_right = 25.0
+offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_a0mxf")
@@ -136,3 +140,6 @@ theme_override_font_sizes/font_size = 50
 text = "💣"
 
 [connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="speed_button" to="." method="_on_speed_button_pressed"]
+[connection signal="pressed" from="health_button" to="." method="_on_health_button_pressed"]
+[connection signal="pressed" from="grenade_button" to="." method="_on_grenade_button_pressed"]

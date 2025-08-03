@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfmwom5dqpekf"]
+
+[ext_resource type="Texture2D" uid="uid://coejmn724naw1" path="res://Sprites/red_enemy.png" id="1_veuk4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_veuk4"]
+size = Vector2(139, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_geyed"]
+size = Vector2(92, 57)
+
+[node name="red_enemy" type="CharacterBody2D"]
+
+[node name="RedEnemy" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("1_veuk4")
+
+[node name="col" type="CollisionShape2D" parent="."]
+position = Vector2(-25.5, -3)
+shape = SubResource("RectangleShape2D_veuk4")
+
+[node name="another_col" type="CollisionShape2D" parent="."]
+position = Vector2(91, -3.5)
+shape = SubResource("RectangleShape2D_geyed")

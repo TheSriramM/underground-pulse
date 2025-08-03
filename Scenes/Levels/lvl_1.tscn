@@ -9256,13 +9256,15 @@ max_speed = 450
 
 [node name="layer" type="CanvasLayer" parent="."]
 
-[node name="healthBar" type="ProgressBar" parent="layer"]
+[node name="healthBar" type="ProgressBar" parent="layer" node_paths=PackedStringArray("player")]
 offset_left = 882.0
 offset_top = 2.0
 offset_right = 1158.0
 offset_bottom = 93.0
 theme_override_font_sizes/font_size = 40
 script = ExtResource("11_6xq7b")
+player = NodePath("../../jeff")
+metadata/_edit_use_anchors_ = true
 
 [node name="heart" type="Label" parent="layer"]
 offset_left = 807.0
@@ -9271,6 +9273,7 @@ offset_right = 889.0
 offset_bottom = 91.0
 theme_override_font_sizes/font_size = 60
 text = "❤️"
+metadata/_edit_use_anchors_ = true
 
 [node name="timerText" type="Label" parent="layer"]
 offset_left = 1026.0
@@ -9278,6 +9281,7 @@ offset_top = 102.0
 offset_right = 1119.0
 offset_bottom = 157.0
 theme_override_font_sizes/font_size = 40
+metadata/_edit_use_anchors_ = true
 
 [node name="gameTimer" type="Timer" parent="."]
 autostart = true

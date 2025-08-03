@@ -1,21 +1,24 @@
 extends CharacterBody2D
 
 signal healthChanged
-@export var max_speed = 400
-@export var maxHealth = 100
-@export var accel = 1500
+@export var max_speed = Global.maxSpeed
+@export var maxHealth = Global.playerHealth
+@export var accel = Global.maxAccel
 var in_spiky_plant = false
 var respawn = Vector2(-400, 50)
 var health = maxHealth
 
 func _ready() -> void:
+	maxHealth = Global.playerHealth
+	max_speed = Global.maxSpeed
+	accel = Global.maxAccel
 	position = respawn
 
 func _process(delta: float) -> void:
 	if in_spiky_plant:
 		slow_down()
 	else:
-		max_speed = 400
+		max_speed = Global.maxSpeed
 
 func _physics_process(delta: float) -> void:
 	velocity = velocity.move_toward(Input.get_vector("left", "right", "up", "down") * max_speed, accel * delta)
