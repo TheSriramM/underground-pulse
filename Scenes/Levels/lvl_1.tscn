@@ -9287,7 +9287,7 @@ metadata/_edit_use_anchors_ = true
 autostart = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(-4224.5, 112)
+position = Vector2(-4302, 98)
 scale = Vector2(2.33203, 786)
 texture = SubResource("GradientTexture1D_4vyx2")
 

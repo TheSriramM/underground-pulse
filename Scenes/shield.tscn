@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cam6qkwsfa41b"]
+
+[ext_resource type="Texture2D" uid="uid://vqpoxdbspa4c" path="res://Sprites/shield.png" id="1_17xpe"]
+[ext_resource type="Script" uid="uid://demvsfh5a4o2" path="res://Scripts/shield.gd" id="2_oux8c"]
+
+[node name="shield" type="Sprite2D"]
+position = Vector2(-5.5, 8)
+scale = Vector2(1.96094, 1.875)
+texture = ExtResource("1_17xpe")
+script = ExtResource("2_oux8c")
+
+[node name="shieldTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="shieldTimer" to="." method="_on_shield_timer_timeout"]

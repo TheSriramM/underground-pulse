@@ -1,21 +1,24 @@
 extends CharacterBody2D
 
-var right = true 
+var down = true 
 var playerEntered = false
-var speed = 220
+var speed = 500
 var fov_rot = Vector2(-95, 0) 
+var fov_pos = Vector2(3, 96)
 var enem_annoyed = false
 var bulletScene = preload("res://Scenes/enemy_laser.tscn")
 @export var player : CharacterBody2D
 
 func _ready() -> void:
 	add_to_group("enemies")
+	$fov.rotation_degrees = 0
+	$fov_area.rotation_degrees = 0
 
-func _physics_process(_delta: float) -> void:
-	if right:
-		velocity.x = speed
+func _physics_process(delta: float) -> void:
+	if down:
+		velocity.y = speed
 	else:
-		velocity.x = -speed
+		velocity.y = -speed
 	if playerEntered:
 		$shootingTimer.start()
 		shoot()
@@ -25,19 +28,21 @@ func _physics_process(_delta: float) -> void:
 func shoot():
 	$shootingRate.start()
 
-func _on_enemy_area_1_area_entered(area: Area2D) -> void:
+func _on_back_enem_area__entered(area: Area2D) -> void:
+	# If game breaks, remove the 1 from the function name
 	if area.get_parent() == self:
-		right = false 
-		$fov.rotation_degrees = 90
-		$fov.position = fov_rot
-		$fov_area.rotation_degrees = 180
+		down = false 
+		$fov.rotation_degrees = 180
+		$fov.position = Vector2(6, -97)
+		$fov_area.rotation_degrees = -90
 
-func _on_enemy_area_2_area_entered(area: Area2D) -> void:
+func _on_back_enem_area_2_entered(area: Area2D) -> void:
 	if area.get_parent() == self:
-		right = true 
-		$fov.rotation_degrees = -90
-		$fov.position = Vector2(100, 12)
-		$fov_area.rotation_degrees = 0
+		down = true
+		$fov.rotation_degrees = 0
+		$fov.position = fov_pos
+		$fov_area.rotation_degrees = 90
+		print($fov_area/col.global_position)
 
 func _on_shooting_timer_timeout() -> void:
 	playerEntered = true

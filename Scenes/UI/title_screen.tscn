@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://eov5owyjocsm"]
+
+[ext_resource type="Script" uid="uid://cajrgy3frtmoj" path="res://Scripts/UI/title_screen.gd" id="1_dnytt"]
+[ext_resource type="FontFile" uid="uid://dm2e0fgq0n617" path="res://UI-assets/Jersey15-Regular.ttf" id="2_kyvdy"]
+
+[node name="title_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dnytt")
+
+[node name="title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 219.0
+offset_top = 31.0
+offset_right = 1180.0
+offset_bottom = 249.0
+theme_override_fonts/font = ExtResource("2_kyvdy")
+theme_override_font_sizes/font_size = 80
+text = "The Underground Pulse"
+
+[node name="play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 298.0
+offset_right = 738.0
+offset_bottom = 391.0
+theme_override_fonts/font = ExtResource("2_kyvdy")
+theme_override_font_sizes/font_size = 40
+text = "Play"
+
+[node name="tutorial" type="Button" parent="."]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 404.0
+offset_right = 738.0
+offset_bottom = 497.0
+theme_override_fonts/font = ExtResource("2_kyvdy")
+theme_override_font_sizes/font_size = 40
+text = "Tutorial"
+
+[node name="quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 513.0
+offset_right = 738.0
+offset_bottom = 606.0
+theme_override_fonts/font = ExtResource("2_kyvdy")
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
