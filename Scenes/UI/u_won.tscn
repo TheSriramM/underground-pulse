@@ -25,12 +25,12 @@ texture = ExtResource("3_xqamk")
 
 [node name="you_won" type="Label" parent="background"]
 layout_mode = 0
-offset_left = 146.0
-offset_top = 26.0
-offset_right = 1195.0
-offset_bottom = 269.0
+offset_left = 229.0
+offset_top = 27.0
+offset_right = 1278.0
+offset_bottom = 270.0
 theme_override_font_sizes/font_size = 80
-text = "You collected the orb!"
+text = "You won for now..."
 
 [node name="credits" type="Label" parent="background"]
 layout_mode = 0

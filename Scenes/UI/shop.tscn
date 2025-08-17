@@ -1,10 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://cw1yglwbk17sq"]
+[gd_scene load_steps=14 format=3 uid="uid://cw1yglwbk17sq"]
 
 [ext_resource type="Script" uid="uid://bqjy4prnvyagp" path="res://Scripts/shop.gd" id="1_l5jkk"]
 [ext_resource type="Texture2D" uid="uid://b12bem1ae3i1x" path="res://Images/grey_gradient.jpg" id="2_4vyng"]
-[ext_resource type="FontFile" uid="uid://dm2e0fgq0n617" path="res://UI-assets/Jersey15-Regular.ttf" id="3_lmqlo"]
+[ext_resource type="FontFile" uid="uid://dm2e0fgq0n617" path="res://Jersey15-Regular.ttf" id="3_lmqlo"]
 [ext_resource type="Theme" uid="uid://dehhs868h2q7i" path="res://UI-assets/default.tres" id="4_eedsn"]
 [ext_resource type="Texture2D" uid="uid://ccpnfhejrtvpl" path="res://UI-assets/Tilesheets/Large tiles/Thin outline/tilemap.png" id="5_y8wv3"]
+[ext_resource type="Texture2D" uid="uid://b64xv3e451jkk" path="res://Sprites/Emojis/green_heart.png" id="6_y8wv3"]
+[ext_resource type="Texture2D" uid="uid://3oulom7cxwf2" path="res://Sprites/Emojis/shield.png" id="7_jw70x"]
+[ext_resource type="Texture2D" uid="uid://1ju4xsgisdk0" path="res://Sprites/Emojis/man-running.png" id="8_ji15u"]
+[ext_resource type="Texture2D" uid="uid://ofcfc8f1ommd" path="res://Sprites/Emojis/shopping_bags.png" id="9_buvk0"]
+[ext_resource type="Texture2D" uid="uid://cgk7vmcvsfsr7" path="res://Sprites/Emojis/dollar.png" id="10_jw70x"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fdj0q"]
 texture = ExtResource("5_y8wv3")
@@ -50,11 +55,12 @@ texture = ExtResource("2_4vyng")
 [node name="shop" type="Label" parent="."]
 layout_mode = 0
 offset_left = -18.0
+offset_top = -10.0
 offset_right = 1134.0
-offset_bottom = 131.0
+offset_bottom = 121.0
 theme_override_fonts/font = ExtResource("3_lmqlo")
 theme_override_font_sizes/font_size = 100
-text = "🛍️Shop🛍️"
+text = "Shop"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -70,10 +76,10 @@ horizontal_alignment = 1
 
 [node name="continue" type="Button" parent="."]
 layout_mode = 0
-offset_left = 416.0
-offset_top = 489.0
-offset_right = 735.0
-offset_bottom = 576.0
+offset_left = 415.0
+offset_top = 518.0
+offset_right = 734.0
+offset_bottom = 605.0
 theme = ExtResource("4_eedsn")
 theme_override_fonts/font = ExtResource("3_lmqlo")
 theme_override_font_sizes/font_size = 40
@@ -81,6 +87,21 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_fdj0q")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_3ps1r")
 theme_override_styles/normal = SubResource("StyleBoxTexture_k6jq0")
 text = "Continue"
+
+[node name="GreenHeart" type="Sprite2D" parent="."]
+position = Vector2(572, 408)
+scale = Vector2(0.3875, 0.35)
+texture = ExtResource("6_y8wv3")
+
+[node name="Shield" type="Sprite2D" parent="."]
+position = Vector2(928, 405.5)
+scale = Vector2(0.475, 0.38125)
+texture = ExtResource("7_jw70x")
+
+[node name="Man-running" type="Sprite2D" parent="."]
+position = Vector2(158, 407)
+scale = Vector2(0.425, 0.3875)
+texture = ExtResource("8_ji15u")
 
 [node name="speed" type="RichTextLabel" parent="."]
 layout_mode = 0
@@ -94,10 +115,10 @@ text = "15% speed increase"
 
 [node name="health" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 499.0
-offset_top = 269.0
-offset_right = 783.0
-offset_bottom = 355.0
+offset_left = 493.0
+offset_top = 266.0
+offset_right = 777.0
+offset_bottom = 352.0
 theme_override_fonts/normal_font = ExtResource("3_lmqlo")
 theme_override_font_sizes/normal_font_size = 40
 text = "15% health increase"
@@ -120,7 +141,6 @@ offset_right = 231.0
 offset_bottom = 443.0
 theme_override_fonts/font = ExtResource("3_lmqlo")
 theme_override_font_sizes/font_size = 50
-text = "🏃‍♂️"
 
 [node name="health_button" type="Button" parent="."]
 layout_mode = 1
@@ -133,7 +153,6 @@ offset_right = 625.72
 offset_bottom = 429.8
 theme_override_fonts/font = ExtResource("3_lmqlo")
 theme_override_font_sizes/font_size = 50
-text = "❤️‍🩹"
 
 [node name="grenade_button" type="Button" parent="."]
 layout_mode = 1
@@ -146,7 +165,51 @@ offset_right = 985.72
 offset_bottom = 424.8
 theme_override_fonts/font = ExtResource("3_lmqlo")
 theme_override_font_sizes/font_size = 50
-text = "🛡️"
+
+[node name="speed_label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 450.0
+offset_right = 316.0
+offset_bottom = 564.0
+theme_override_fonts/font = ExtResource("3_lmqlo")
+theme_override_font_sizes/font_size = 60
+text = "20"
+
+[node name="speed_label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 545.0
+offset_top = 452.0
+offset_right = 734.0
+offset_bottom = 566.0
+theme_override_fonts/font = ExtResource("3_lmqlo")
+theme_override_font_sizes/font_size = 60
+text = "20"
+
+[node name="speed_label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 446.0
+offset_right = 1089.0
+offset_bottom = 560.0
+theme_override_fonts/font = ExtResource("3_lmqlo")
+theme_override_font_sizes/font_size = 60
+text = "40"
+
+[node name="ShoppingBags" type="Sprite2D" parent="."]
+position = Vector2(380, 58)
+scale = Vector2(0.75625, 0.74375)
+texture = ExtResource("9_buvk0")
+
+[node name="ShoppingBags2" type="Sprite2D" parent="."]
+position = Vector2(744, 52)
+scale = Vector2(0.75625, 0.74375)
+texture = ExtResource("9_buvk0")
+
+[node name="Dollar" type="Sprite2D" parent="."]
+position = Vector2(466, 162)
+scale = Vector2(0.628125, 0.621875)
+texture = ExtResource("10_jw70x")
 
 [connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="speed_button" to="." method="_on_speed_button_pressed"]

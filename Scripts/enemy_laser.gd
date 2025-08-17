@@ -7,7 +7,7 @@ func _physics_process(_delta: float) -> void:
 	position += direction * speed
 
 func _on_laser_area_entered(area: Area2D) -> void:
-	if area.name == "playerArea":
+	if area.name == "playerArea" or area.name == "shieldArea":
 		queue_free()
 
 func _on_laser_timer_timeout() -> void:

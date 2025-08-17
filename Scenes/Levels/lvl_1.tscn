@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://0urbf2dgv0i5"]
+[gd_scene load_steps=31 format=4 uid="uid://0urbf2dgv0i5"]
 
 [ext_resource type="Script" uid="uid://cxane8nol4g7w" path="res://Scripts/Level 1/lvl_1.gd" id="1_4vyx2"]
 [ext_resource type="Texture2D" uid="uid://5n7jyi02kmr6" path="res://Tilesheet/towerDefense_tilesheet.png" id="1_j5105"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://bxlerinaqfnrm" path="res://Scripts/Level 1/lvl1miniBoss.gd" id="9_m4r5h"]
 [ext_resource type="PackedScene" uid="uid://c6xs2thkhkg2m" path="res://Scenes/jeff.tscn" id="10_ekxsg"]
 [ext_resource type="Script" uid="uid://cigf6yfw0bjai" path="res://Scripts/UI/health_bar.gd" id="11_6xq7b"]
+[ext_resource type="Texture2D" uid="uid://cw3py0cmfr7mm" path="res://Sprites/Emojis/heart.png" id="12_03shp"]
+[ext_resource type="Texture2D" uid="uid://dvl7al1tfsm38" path="res://Sprites/Emojis/alarm_clock.png" id="13_03shp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_glk67"]
 texture = ExtResource("1_j5105")
@@ -9012,6 +9014,7 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_j5105")
 
 [node name="lvl_1" type="Node2D" node_paths=PackedStringArray("label")]
+scale = Vector2(0.999408, 0.987642)
 script = ExtResource("1_4vyx2")
 label = NodePath("layer/timerText")
 
@@ -9134,6 +9137,7 @@ position = Vector2(-291, -93)
 shape = SubResource("RectangleShape2D_344ge")
 
 [node name="spiky_plant" type="Area2D" parent="enemies"]
+visible = false
 
 [node name="col1" type="CollisionShape2D" parent="enemies/spiky_plant"]
 position = Vector2(-993, 98)
@@ -9266,15 +9270,6 @@ script = ExtResource("11_6xq7b")
 player = NodePath("../../jeff")
 metadata/_edit_use_anchors_ = true
 
-[node name="heart" type="Label" parent="layer"]
-offset_left = 807.0
-offset_top = 8.0
-offset_right = 889.0
-offset_bottom = 91.0
-theme_override_font_sizes/font_size = 60
-text = "❤️"
-metadata/_edit_use_anchors_ = true
-
 [node name="timerText" type="Label" parent="layer"]
 offset_left = 1026.0
 offset_top = 102.0
@@ -9282,6 +9277,16 @@ offset_right = 1119.0
 offset_bottom = 157.0
 theme_override_font_sizes/font_size = 40
 metadata/_edit_use_anchors_ = true
+
+[node name="Heart" type="Sprite2D" parent="layer"]
+position = Vector2(842, 47)
+scale = Vector2(0.524925, 0.47033)
+texture = ExtResource("12_03shp")
+
+[node name="TimerClock" type="Sprite2D" parent="layer"]
+position = Vector2(980, 128)
+scale = Vector2(0.449852, 0.40941)
+texture = ExtResource("13_03shp")
 
 [node name="gameTimer" type="Timer" parent="."]
 autostart = true

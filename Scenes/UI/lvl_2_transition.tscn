@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp2nga2ob4637"]
+
+[ext_resource type="FontFile" uid="uid://dm2e0fgq0n617" path="res://Jersey15-Regular.ttf" id="1_b1y0i"]
+[ext_resource type="Script" uid="uid://cu1ro2li82cwc" path="res://Scripts/UI/lvl_2_transition.gd" id="1_j7o36"]
+
+[node name="lvl1transition" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j7o36")
+
+[node name="important_colour" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 308.0
+offset_right = 1123.0
+offset_bottom = 506.0
+color = Color(0.90956, 0.321217, 0.421428, 1)
+
+[node name="title" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 168.0
+theme_override_fonts/font = ExtResource("1_b1y0i")
+theme_override_font_sizes/font_size = 100
+text = "Welcome to Level Two"
+
+[node name="info" type="Label" parent="."]
+layout_mode = 0
+offset_top = 96.0
+offset_right = 1152.0
+offset_bottom = 635.0
+theme_override_fonts/font = ExtResource("1_b1y0i")
+theme_override_font_sizes/font_size = 45
+text = "This level will be a lot harder than thew first level
+
+Obtain the scroll at the end of this level to get access to 
+where the boss is."
+
+[node name="important" type="Label" parent="."]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 308.0
+offset_right = 1105.0
+offset_bottom = 537.0
+theme_override_fonts/font = ExtResource("1_b1y0i")
+theme_override_font_sizes/font_size = 60
+text = "Remeber to only use a shield when you need
+to as you can only use it once! 
+Press C if you want to use it."
+
+[node name="continue" type="Button" parent="."]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 521.0
+offset_right = 715.0
+offset_bottom = 605.0
+theme_override_fonts/font = ExtResource("1_b1y0i")
+theme_override_font_sizes/font_size = 50
+text = "Continue"
+
+[connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]

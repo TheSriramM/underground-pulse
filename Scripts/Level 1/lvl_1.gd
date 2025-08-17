@@ -5,7 +5,7 @@ var time_played = 60
 
 func _on_game_timer_timeout() -> void:
 	time_played -= 1
-	label.text = "⌛ " + str(time_played)
+	label.text = str(time_played)
 	if time_played <= 0:
 		Global.money = time_played
 		get_tree().call_deferred("change_scene_to_file", "res://Scenes/UI/u_died.tscn")

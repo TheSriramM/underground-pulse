@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cguhnu2owtya4"]
+[gd_scene load_steps=6 format=3 uid="uid://cguhnu2owtya4"]
 
 [ext_resource type="Script" uid="uid://bpmsdd6khhqrf" path="res://Scripts/UI/tutorial.gd" id="1_jwb06"]
-[ext_resource type="FontFile" uid="uid://dm2e0fgq0n617" path="res://UI-assets/Jersey15-Regular.ttf" id="2_sa18l"]
+[ext_resource type="FontFile" uid="uid://dm2e0fgq0n617" path="res://Jersey15-Regular.ttf" id="2_sa18l"]
+[ext_resource type="Texture2D" uid="uid://c22noiugf4iak" path="res://Images/main_background.png" id="2_sb71i"]
+[ext_resource type="Texture2D" uid="uid://bpsdir23dnr2r" path="res://Sprites/spiky_plant-removebg-preview.png" id="3_sa18l"]
+[ext_resource type="Texture2D" uid="uid://c2b2x2fu307nh" path="res://Sprites/jeff.png" id="4_wvmhp"]
 
 [node name="tutorial" type="Control"]
 layout_mode = 3
@@ -12,6 +15,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jwb06")
 
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(4.5, 2.6)
+texture = ExtResource("2_sb71i")
+
 [node name="info" type="Label" parent="."]
 layout_mode = 0
 offset_left = -2.0
@@ -21,8 +31,12 @@ offset_bottom = 279.0
 theme_override_fonts/font = ExtResource("2_sa18l")
 theme_override_font_sizes/font_size = 40
 text = "WASD/Arrow Keys for movement
-
-"
+C to use shield (only after purchase)
+Avoid stepping into the field of vision of enemies as they will start to attack 
+Moving across          - causes damage and makes you move slower
+You can upgrade stats and purchase a shield after Level 1
+Level Two is a lot harder than Level One
+You have 60 seconds to complete Level One. Faster means more money"
 
 [node name="back" type="Button" parent="."]
 layout_mode = 0
@@ -33,5 +47,24 @@ offset_bottom = 599.0
 theme_override_fonts/font = ExtResource("2_sa18l")
 theme_override_font_sizes/font_size = 40
 text = "Back"
+
+[node name="SpikyPlant-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(260, 155)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_sa18l")
+
+[node name="character" type="Label" parent="."]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 336.0
+offset_right = 422.0
+offset_bottom = 387.0
+theme_override_fonts/font = ExtResource("2_sa18l")
+theme_override_font_sizes/font_size = 50
+text = "You play as Jeff - "
+
+[node name="Jeff" type="Sprite2D" parent="."]
+position = Vector2(520, 359)
+texture = ExtResource("4_wvmhp")
 
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]

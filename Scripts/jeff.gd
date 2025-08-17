@@ -68,3 +68,15 @@ func _on_lvl_2_spike_plants_area_entered(area: Area2D) -> void:
 func _on_lvl_2_spike_plants_area_exited(area: Area2D) -> void:
 	if area.name == "playerArea":
 		in_spiky_plant = false
+
+func _on_scroll_area_entered(area: Area2D) -> void:
+	if area.name == "playerArea":
+		get_tree().call_deferred("change_scene_to_file", "res://Scenes/UI/u_won.tscn")
+
+func _on_tutorial_spiky_plant_area_entered(area: Area2D) -> void:
+	if area.name == "playerArea":
+		in_spiky_plant = true
+
+func _on_tutorial_spiky_plant_area_exited(area: Area2D) -> void:
+	if area.name == "playerArea":
+		in_spiky_plant = false

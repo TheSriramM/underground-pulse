@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://brliv03kun48f"]
+[gd_scene load_steps=25 format=4 uid="uid://brliv03kun48f"]
 
 [ext_resource type="Texture2D" uid="uid://5n7jyi02kmr6" path="res://Tilesheet/towerDefense_tilesheet.png" id="1_6vhvt"]
 [ext_resource type="PackedScene" uid="uid://c6xs2thkhkg2m" path="res://Scenes/jeff.tscn" id="2_ftt6u"]
@@ -10,9 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://bsgx7cdve78uk" path="res://Scenes/green_enemy.tscn" id="7_74xfq"]
 [ext_resource type="Script" uid="uid://gooxf3i25qyx" path="res://Scripts/Level 2/enemy_1.gd" id="7_xengt"]
 [ext_resource type="Script" uid="uid://bhspf7qyig8q3" path="res://Scripts/Level 2/green_enemy.gd" id="8_bbcur"]
+[ext_resource type="Texture2D" uid="uid://cw3py0cmfr7mm" path="res://Sprites/Emojis/heart.png" id="10_thigb"]
 [ext_resource type="Texture2D" uid="uid://b5xjfko3j2re1" path="res://Sprites/Scroll--Streamline-Emojitwo.png" id="11_eu2m6"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ftt6u"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vxitj"]
 texture = ExtResource("1_6vhvt")
 0:0/0 = 0
 1:0/0 = 0
@@ -4533,9 +4534,9 @@ texture = ExtResource("1_6vhvt")
 
 [sub_resource type="TileSet" id="TileSet_r503k"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_ftt6u")
+sources/0 = SubResource("TileSetAtlasSource_vxitj")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t6fpb"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_thigb"]
 texture = ExtResource("1_6vhvt")
 0:0/0 = 0
 1:0/0 = 0
@@ -8969,7 +8970,7 @@ texture = ExtResource("1_6vhvt")
 
 [sub_resource type="TileSet" id="TileSet_rummd"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_t6fpb")
+sources/0 = SubResource("TileSetAtlasSource_thigb")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r503k"]
 radius = 30.5941
@@ -8994,6 +8995,9 @@ height = 430.0
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_eu2m6"]
 gradient = SubResource("Gradient_bbcur")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eu2m6"]
+size = Vector2(30.5, 29.5)
 
 [node name="lvl_2" type="Node2D"]
 
@@ -9141,7 +9145,7 @@ player = NodePath("../../jeff")
 [node name="shootingTimer" type="Timer" parent="obstacles/green_enemy"]
 
 [node name="shootingRate" type="Timer" parent="obstacles/green_enemy"]
-wait_time = 0.25
+wait_time = 0.22
 
 [node name="greenEnemArea" type="Area2D" parent="obstacles"]
 
@@ -9165,15 +9169,6 @@ script = ExtResource("3_r503k")
 player = NodePath("../../jeff")
 metadata/_edit_use_anchors_ = true
 
-[node name="heart" type="Label" parent="layer"]
-offset_left = 807.0
-offset_top = 8.0
-offset_right = 889.0
-offset_bottom = 91.0
-theme_override_font_sizes/font_size = 60
-text = "❤️"
-metadata/_edit_use_anchors_ = true
-
 [node name="timerText" type="Label" parent="layer"]
 offset_left = 1026.0
 offset_top = 102.0
@@ -9181,6 +9176,11 @@ offset_right = 1119.0
 offset_bottom = 157.0
 theme_override_font_sizes/font_size = 40
 metadata/_edit_use_anchors_ = true
+
+[node name="Heart" type="Sprite2D" parent="layer"]
+position = Vector2(842, 47)
+scale = Vector2(0.524925, 0.47033)
+texture = ExtResource("10_thigb")
 
 [node name="jeff" parent="." instance=ExtResource("2_ftt6u")]
 position = Vector2(-394, 118)
@@ -9196,6 +9196,12 @@ texture = SubResource("GradientTexture2D_eu2m6")
 position = Vector2(-2582, -291)
 scale = Vector2(2, 2)
 texture = ExtResource("11_eu2m6")
+
+[node name="scrollArea" type="Area2D" parent="scroll"]
+
+[node name="col" type="CollisionShape2D" parent="scroll/scrollArea"]
+position = Vector2(-0.25, 0.25)
+shape = SubResource("RectangleShape2D_eu2m6")
 
 [connection signal="area_entered" from="obstacles/lvl2_spike_plants" to="jeff" method="_on_lvl_2_spike_plants_area_entered"]
 [connection signal="area_exited" from="obstacles/lvl2_spike_plants" to="jeff" method="_on_lvl_2_spike_plants_area_exited"]
@@ -9215,3 +9221,4 @@ texture = ExtResource("11_eu2m6")
 [connection signal="timeout" from="obstacles/green_enemy/shootingTimer" to="obstacles/green_enemy" method="_on_shooting_timer_timeout"]
 [connection signal="timeout" from="obstacles/green_enemy/shootingRate" to="obstacles/green_enemy" method="_on_shooting_rate_timeout"]
 [connection signal="area_entered" from="obstacles/greenEnemArea" to="obstacles/green_enemy" method="_on_green_enem_area_entered"]
+[connection signal="area_entered" from="scroll/scrollArea" to="jeff" method="_on_scroll_area_entered"]
