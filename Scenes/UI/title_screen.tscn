@@ -35,30 +35,40 @@ text = "The Underground Pulse"
 
 [node name="play" type="Button" parent="."]
 layout_mode = 0
-offset_left = 431.0
-offset_top = 298.0
-offset_right = 738.0
-offset_bottom = 391.0
+offset_left = 433.0
+offset_top = 202.0
+offset_right = 740.0
+offset_bottom = 295.0
 theme_override_fonts/font = ExtResource("2_kyvdy")
 theme_override_font_sizes/font_size = 40
 text = "Play"
 
-[node name="tutorial" type="Button" parent="."]
+[node name="instructions" type="Button" parent="."]
 layout_mode = 0
 offset_left = 431.0
-offset_top = 404.0
+offset_top = 397.0
 offset_right = 738.0
-offset_bottom = 497.0
+offset_bottom = 490.0
+theme_override_fonts/font = ExtResource("2_kyvdy")
+theme_override_font_sizes/font_size = 40
+text = "Instructions"
+
+[node name="tutorial" type="Button" parent="."]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 300.0
+offset_right = 739.0
+offset_bottom = 393.0
 theme_override_fonts/font = ExtResource("2_kyvdy")
 theme_override_font_sizes/font_size = 40
 text = "Tutorial"
 
 [node name="quit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 431.0
-offset_top = 513.0
-offset_right = 738.0
-offset_bottom = 606.0
+offset_left = 430.0
+offset_top = 494.0
+offset_right = 737.0
+offset_bottom = 587.0
 theme_override_fonts/font = ExtResource("2_kyvdy")
 theme_override_font_sizes/font_size = 40
 text = "Quit"
@@ -87,5 +97,6 @@ position = Vector2(99, 229)
 texture = ExtResource("8_3txao")
 
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="instructions" to="." method="_on_instructions_pressed"]
 [connection signal="pressed" from="tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

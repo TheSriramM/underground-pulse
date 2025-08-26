@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://qq5ipuc1u8xj"]
+
+[ext_resource type="Texture2D" uid="uid://bl5xjopl7pc1a" path="res://Sprites/mainPlayerBullet.png" id="1_bg8x2"]
+
+[sub_resource type="Animation" id="Animation_jskx8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.2, 0.2)]
+}
+
+[sub_resource type="Animation" id="Animation_3m2mg"]
+resource_name = "fired"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.666667, 0.966667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(0.5, 0.5), Vector2(0.75, 0.5), Vector2(1, 0.75)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nocgn"]
+_data = {
+&"RESET": SubResource("Animation_jskx8"),
+&"fired": SubResource("Animation_3m2mg")
+}
+
+[node name="player_bullet" type="Sprite2D"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_bg8x2")
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nocgn")
+}

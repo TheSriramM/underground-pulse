@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://coqv1ob7bp3d1"]
+
+[ext_resource type="FontFile" uid="uid://dm2e0fgq0n617" path="res://Jersey15-Regular.ttf" id="1_4sss0"]
+[ext_resource type="Script" uid="uid://bjtn64x8r0rnq" path="res://Scripts/Tutorial/tut_transition.gd" id="1_33j7p"]
+
+[node name="tut_transition" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_33j7p")
+
+[node name="title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 58.0
+offset_right = 917.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("1_4sss0")
+theme_override_font_sizes/font_size = 90
+text = "Tutorial Complete"
+
+[node name="lvl_1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 369.0
+offset_top = 347.0
+offset_right = 780.0
+offset_bottom = 441.0
+theme_override_fonts/font = ExtResource("1_4sss0")
+theme_override_font_sizes/font_size = 50
+text = "Proceed to Level 1"
+
+[node name="backtoMain" type="Button" parent="."]
+layout_mode = 0
+offset_left = 369.0
+offset_top = 469.0
+offset_right = 780.0
+offset_bottom = 563.0
+theme_override_fonts/font = ExtResource("1_4sss0")
+theme_override_font_sizes/font_size = 50
+text = "Back to main menu"
+
+[connection signal="pressed" from="lvl_1" to="." method="_on_lvl_1_pressed"]
+[connection signal="pressed" from="backtoMain" to="." method="_on_backto_main_pressed"]

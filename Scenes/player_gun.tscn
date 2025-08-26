@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c66nbstrhhfq1"]
+
+[ext_resource type="Texture2D" uid="uid://ylaliqtlktsa" path="res://Sprites/gunwb-removebg-preview.png" id="1_jnd84"]
+
+[node name="playerGun" type="Sprite2D"]
+texture = ExtResource("1_jnd84")
