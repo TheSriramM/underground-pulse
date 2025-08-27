@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://qq5ipuc1u8xj"]
+[gd_scene load_steps=6 format=3 uid="uid://qq5ipuc1u8xj"]
 
 [ext_resource type="Texture2D" uid="uid://bl5xjopl7pc1a" path="res://Sprites/mainPlayerBullet.png" id="1_bg8x2"]
+[ext_resource type="Script" uid="uid://ht5jxc0vbbt7" path="res://Scripts/player_bullet.gd" id="2_3m2mg"]
 
 [sub_resource type="Animation" id="Animation_jskx8"]
 length = 0.001
@@ -41,8 +42,11 @@ _data = {
 [node name="player_bullet" type="Sprite2D"]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_bg8x2")
+script = ExtResource("2_3m2mg")
 
 [node name="anim" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_nocgn")
 }
+
+[node name="playerBulletArea" type="Area2D" parent="."]

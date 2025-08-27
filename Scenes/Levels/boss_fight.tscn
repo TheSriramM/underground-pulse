@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://b10mlrm8q4q7p"]
+
+[ext_resource type="Script" uid="uid://fbjckdnvsitu" path="res://Scripts/Boss Fight/boss_fight.gd" id="1_1bn4p"]
+[ext_resource type="PackedScene" uid="uid://eol4ictg34yn" path="res://Scenes/boss.tscn" id="2_nftbk"]
+[ext_resource type="PackedScene" uid="uid://c6xs2thkhkg2m" path="res://Scenes/jeff.tscn" id="3_b7223"]
+[ext_resource type="Texture2D" uid="uid://dan5aytg0xsmo" path="res://Sprites/more_realistic_ray.png" id="3_nftbk"]
+
+[node name="bossFight" type="Node2D"]
+script = ExtResource("1_1bn4p")
+
+[node name="boss" parent="." instance=ExtResource("2_nftbk")]
+position = Vector2(592, 161)
+scale = Vector2(3.31, 3.3)
+
+[node name="ray" type="Sprite2D" parent="boss"]
+show_behind_parent = true
+position = Vector2(-79.4562, -4.54545)
+scale = Vector2(0.875283, 1.38696)
+texture = ExtResource("3_nftbk")
+
+[node name="jeff" parent="." instance=ExtResource("3_b7223")]
+position = Vector2(590, 423)
