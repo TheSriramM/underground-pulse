@@ -39,6 +39,12 @@ func _on_player_area_entered(area: Area2D) -> void:
 			healthChanged.emit()
 		else:
 			get_tree().call_deferred("change_scene_to_file", "res://Scenes/UI/u_died.tscn")
+	if area.name == "bossBulletArea":
+		health -= 20
+		if health > 0:
+			healthChanged.emit()
+		else:
+			get_tree().call_deferred("change_scene_to_file", "res://Scenes/UI/u_died.tscn")
 
 func _on_lvl_boundary_area_entered(area: Area2D) -> void:
 	if area.name == "playerArea":

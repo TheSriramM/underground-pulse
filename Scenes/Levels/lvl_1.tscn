@@ -9016,7 +9016,7 @@ gradient = SubResource("Gradient_j5105")
 [node name="lvl_1" type="Node2D" node_paths=PackedStringArray("label")]
 scale = Vector2(0.999408, 0.987642)
 script = ExtResource("1_4vyx2")
-label = NodePath("layer/timerText")
+label = NodePath("playerStats/timerText")
 
 [node name="maze" type="Node2D" parent="."]
 
@@ -9263,9 +9263,9 @@ max_speed = 450
 
 [node name="camera" type="Camera2D" parent="jeff"]
 
-[node name="layer" type="CanvasLayer" parent="."]
+[node name="playerStats" type="CanvasLayer" parent="."]
 
-[node name="healthBar" type="ProgressBar" parent="layer" node_paths=PackedStringArray("player")]
+[node name="healthBar" type="ProgressBar" parent="playerStats" node_paths=PackedStringArray("player")]
 offset_left = 882.0
 offset_top = 2.0
 offset_right = 1158.0
@@ -9275,7 +9275,7 @@ script = ExtResource("11_6xq7b")
 player = NodePath("../../jeff")
 metadata/_edit_use_anchors_ = true
 
-[node name="timerText" type="Label" parent="layer"]
+[node name="timerText" type="Label" parent="playerStats"]
 offset_left = 1026.0
 offset_top = 102.0
 offset_right = 1119.0
@@ -9283,12 +9283,12 @@ offset_bottom = 157.0
 theme_override_font_sizes/font_size = 40
 metadata/_edit_use_anchors_ = true
 
-[node name="Heart" type="Sprite2D" parent="layer"]
+[node name="Heart" type="Sprite2D" parent="playerStats"]
 position = Vector2(842, 47)
 scale = Vector2(0.524925, 0.47033)
 texture = ExtResource("12_03shp")
 
-[node name="TimerClock" type="Sprite2D" parent="layer"]
+[node name="TimerClock" type="Sprite2D" parent="playerStats"]
 position = Vector2(980, 128)
 scale = Vector2(0.449852, 0.40941)
 texture = ExtResource("13_03shp")

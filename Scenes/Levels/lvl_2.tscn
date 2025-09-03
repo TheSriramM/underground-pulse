@@ -13598,9 +13598,9 @@ shape = SubResource("CapsuleShape2D_bbcur")
 position = Vector2(-2455, 847)
 shape = SubResource("CapsuleShape2D_bbcur")
 
-[node name="layer" type="CanvasLayer" parent="."]
+[node name="playerStats" type="CanvasLayer" parent="."]
 
-[node name="healthBar" type="ProgressBar" parent="layer" node_paths=PackedStringArray("player")]
+[node name="healthBar" type="ProgressBar" parent="playerStats" node_paths=PackedStringArray("player")]
 offset_left = 882.0
 offset_top = 2.0
 offset_right = 1158.0
@@ -13610,7 +13610,7 @@ script = ExtResource("3_r503k")
 player = NodePath("../../jeff")
 metadata/_edit_use_anchors_ = true
 
-[node name="timerText" type="Label" parent="layer"]
+[node name="timerText" type="Label" parent="playerStats"]
 offset_left = 1026.0
 offset_top = 102.0
 offset_right = 1119.0
@@ -13618,7 +13618,7 @@ offset_bottom = 157.0
 theme_override_font_sizes/font_size = 40
 metadata/_edit_use_anchors_ = true
 
-[node name="Heart" type="Sprite2D" parent="layer"]
+[node name="Heart" type="Sprite2D" parent="playerStats"]
 position = Vector2(842, 47)
 scale = Vector2(0.524925, 0.47033)
 texture = ExtResource("10_thigb")
