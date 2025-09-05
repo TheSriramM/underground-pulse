@@ -29,7 +29,8 @@ func red_ballz():
 	add_child(redBall)
 	move_child(redBall, 3)
 	redBall.global_position = Vector2(x_pos, y_pos)
-	$redBallz/anim.play("get_bigger")
+	redBall.get_child(1).play("get_bigger")
+	await redBall.get_child(1).animation_finished
 
 func _on_ball_timer_timeout() -> void:
 	red_ballz()

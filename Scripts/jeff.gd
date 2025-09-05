@@ -9,6 +9,7 @@ signal healthChanged
 var in_spiky_plant = false
 var inRay = false
 var bossHit = false
+var inBall = false
 var respawn = Vector2(-400, 50)
 var health = maxHealth
 var shieldNotInUse = true
@@ -35,6 +36,8 @@ func _process(delta: float) -> void:
 		slow_damage()
 	if bossHit:
 		slow_damage()
+	if inBall:
+		slow_damage()
 
 func _physics_process(delta: float) -> void:
 	velocity = velocity.move_toward(Input.get_vector("left", "right", "up", "down") * max_speed, accel * delta)
@@ -49,6 +52,9 @@ func _on_player_area_entered(area: Area2D) -> void:
 			get_tree().call_deferred("change_scene_to_file", "res://Scenes/UI/u_died.tscn")
 	if area.name == "bossBulletArea":
 		bossHit = true
+	if area.name == "ballzArea":
+		print("entered ball")
+		inBall = true
 
 func _on_lvl_boundary_area_entered(area: Area2D) -> void:
 	if area.name == "playerArea":
@@ -114,3 +120,13 @@ func _on_ray_area_exited(area: Area2D) -> void:
 func _on_player_area_exited(area: Area2D) -> void:
 	if area.name == "bossBulletArea":
 		bossHit = false
+	if area.name == "ballzArea":
+		inBall = false
+
+func _on_boss_spike_plants_area_entered(area: Area2D) -> void:
+	if area.name == "playerArea":
+		in_spiky_plant = true
+
+func _on_boss_spike_plants_area_exited(area: Area2D) -> void:
+	if area.name == "playerArea":
+		in_spiky_plant = false
