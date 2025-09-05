@@ -1,4 +1,4 @@
-extends Sprite2D
+extends GPUParticles2D
 
 # Changing the name of the scene requires too much work
 
@@ -8,7 +8,6 @@ var direction: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	scale = SIZE
-	$anim.play("fired")
 
 func _process(delta: float) -> void:
 	position += direction * SPEED * delta

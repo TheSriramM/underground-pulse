@@ -9062,9 +9062,8 @@ position = Vector2(1.21818, -4.18493)
 shape = SubResource("CapsuleShape2D_hh7y1")
 
 [node name="boss" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_nftbk")]
-position = Vector2(617, 274)
+position = Vector2(610, 274)
 scale = Vector2(3.31, 3.3)
-animation = &"charging"
 script = ExtResource("5_top3v")
 player = NodePath("../jeff")
 
@@ -9102,5 +9101,16 @@ position = Vector2(842, 47)
 scale = Vector2(0.524925, 0.47033)
 texture = ExtResource("8_yn8rh")
 
+[node name="ballTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="ballDeletion" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
 [connection signal="timeout" from="ray/rayTimer" to="." method="_on_ray_timer_timeout"]
+[connection signal="area_entered" from="ray/rayArea" to="jeff" method="_on_ray_area_entered"]
+[connection signal="area_exited" from="ray/rayArea" to="jeff" method="_on_ray_area_exited"]
 [connection signal="timeout" from="boss/shootTimer" to="boss" method="_on_shoot_timer_timeout"]
+[connection signal="timeout" from="ballTimer" to="." method="_on_ball_timer_timeout"]

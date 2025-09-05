@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://eol4ictg34yn"]
+[gd_scene load_steps=36 format=3 uid="uid://eol4ictg34yn"]
 
 [ext_resource type="Texture2D" uid="uid://brk5k8b8g4866" path="res://UI-assets/Boss/Mecha-stone Golem 0.1/PNG sheet/Character_sheet.png" id="1_k1my7"]
 
@@ -249,6 +249,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0154r"]
+radius = 28.1603
+
 [node name="boss" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_h3e1u")
 animation = &"death"
+
+[node name="rigidbody" type="RigidBody2D" parent="."]
+
+[node name="col" type="CollisionShape2D" parent="rigidbody"]
+position = Vector2(-2, 1)
+shape = SubResource("CircleShape2D_0154r")
