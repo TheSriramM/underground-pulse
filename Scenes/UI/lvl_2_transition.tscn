@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bp2nga2ob4637"]
+[gd_scene load_steps=4 format=3 uid="uid://bp2nga2ob4637"]
 
 [ext_resource type="FontFile" uid="uid://dm2e0fgq0n617" path="res://Jersey15-Regular.ttf" id="1_b1y0i"]
 [ext_resource type="Script" uid="uid://cu1ro2li82cwc" path="res://Scripts/UI/lvl_2_transition.gd" id="1_j7o36"]
+[ext_resource type="Texture2D" uid="uid://bga34gcbleyo8" path="res://Sprites/betterTutScroll-removebg-preview.png" id="2_eoaup"]
 
 [node name="lvl1transition" type="Control"]
 layout_mode = 3
@@ -12,47 +13,69 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_j7o36")
 
+[node name="scroll" type="Sprite2D" parent="."]
+position = Vector2(571.602, 320.559)
+scale = Vector2(3.23202, 2.18274)
+texture = ExtResource("2_eoaup")
+
 [node name="important_colour" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 99.0
-offset_top = 308.0
-offset_right = 1123.0
+offset_left = 288.0
+offset_top = 137.0
+offset_right = 852.0
 offset_bottom = 506.0
-color = Color(0.90956, 0.321217, 0.421428, 1)
+color = Color(0.426197, 0.562686, 0.769537, 1)
 
 [node name="title" type="Label" parent="."]
 layout_mode = 0
-offset_right = 1152.0
+offset_left = 180.0
+offset_right = 1332.0
 offset_bottom = 168.0
 theme_override_fonts/font = ExtResource("1_b1y0i")
 theme_override_font_sizes/font_size = 100
-text = "Welcome to Level Two"
+text = "        IMPORTANT!"
 
 [node name="info" type="Label" parent="."]
+visible = false
 layout_mode = 0
-offset_top = 96.0
-offset_right = 1152.0
-offset_bottom = 635.0
+offset_left = 318.0
+offset_top = 235.0
+offset_right = 875.0
+offset_bottom = 601.0
 theme_override_fonts/font = ExtResource("1_b1y0i")
 theme_override_font_sizes/font_size = 45
-text = "This level will be a lot harder than thew first level
-
-Obtain the scroll at the end of this level to get access to 
+text = "Obtain the scroll at the end of 
+this level to get access to 
 where the boss is."
 
-[node name="important" type="Label" parent="."]
+[node name="harder" type="Label" parent="."]
+visible = false
 layout_mode = 0
-offset_left = 127.0
-offset_top = 308.0
-offset_right = 1105.0
-offset_bottom = 537.0
+offset_left = 348.0
+offset_top = 248.0
+offset_right = 1179.0
+offset_bottom = 614.0
+theme_override_fonts/font = ExtResource("1_b1y0i")
+theme_override_font_sizes/font_size = 45
+text = "This level will be a lot 
+harder than the first level"
+
+[node name="important" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 301.0
+offset_top = 168.0
+offset_right = 1279.0
+offset_bottom = 584.0
 theme_override_fonts/font = ExtResource("1_b1y0i")
 theme_override_font_sizes/font_size = 60
-text = "Remeber to only use a shield when you need
-to as you can only use it once! 
-Press C if you want to use it."
+text = "If you have purchased a
+shield, you can only use 
+it once. 
+Press C to use it."
 
 [node name="continue" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 426.0
 offset_top = 521.0

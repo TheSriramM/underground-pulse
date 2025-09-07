@@ -3,12 +3,15 @@ extends Node2D
 var playerSpawn = Vector2(560, 453)
 const rotateDegrees = 20
 var redBallzScene = preload("res://Scenes/red_ballz.tscn")
+var time_played = 60
+@export var timerLabel : Label
 @onready var boss: AnimatedSprite2D
 
 func _ready() -> void:
 	$jeff.global_position = playerSpawn
 	boss = get_node("boss")
 	boss.play("idle")
+	$fightTimer.start()
 
 func rays():
 	$ray/rayAnim.play("load")
@@ -34,3 +37,10 @@ func red_ballz():
 
 func _on_ball_timer_timeout() -> void:
 	red_ballz()
+
+func _on_fight_timer_timeout() -> void:
+	time_played -= 1
+	timerLabel.text = str(time_played)
+	if time_played <= 0:
+		Global.money = time_played
+		get_tree().call_deferred("change_scene_to_file", "res://Scenes/UI/u_won.tscn")

@@ -1,13 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6xs2thkhkg2m"]
+[gd_scene load_steps=5 format=3 uid="uid://c6xs2thkhkg2m"]
 
 [ext_resource type="Script" uid="uid://c0ov51cy6togq" path="res://Scripts/jeff.gd" id="1_5qks8"]
 [ext_resource type="Texture2D" uid="uid://c2b2x2fu307nh" path="res://Sprites/jeff.png" id="2_ajdjb"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5qks8"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 30.0
+gravity = Vector3(0, 0, 0)
+scale_min = 5.0
+scale_max = 6.0
+color = Color(0.691357, 0.691357, 0.691357, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w3dqi"]
 radius = 40.0
 
 [node name="jeff" type="CharacterBody2D"]
 script = ExtResource("1_5qks8")
+
+[node name="dust" type="GPUParticles2D" parent="."]
+amount = 16
+lifetime = 1.15
+speed_scale = 1.25
+randomness = 0.05
+process_material = SubResource("ParticleProcessMaterial_5qks8")
 
 [node name="Jeff" type="Sprite2D" parent="."]
 texture = ExtResource("2_ajdjb")

@@ -256,7 +256,7 @@ radius = 28.1603
 sprite_frames = SubResource("SpriteFrames_h3e1u")
 animation = &"death"
 
-[node name="rigidbody" type="RigidBody2D" parent="."]
+[node name="rigidbody" type="StaticBody2D" parent="."]
 
 [node name="col" type="CollisionShape2D" parent="rigidbody"]
 position = Vector2(-2, 1)
