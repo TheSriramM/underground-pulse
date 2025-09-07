@@ -1,13 +1,13 @@
-[gd_scene load_steps=20 format=4 uid="uid://b10mlrm8q4q7p"]
+[gd_scene load_steps=15 format=4 uid="uid://b10mlrm8q4q7p"]
 
 [ext_resource type="Script" uid="uid://fbjckdnvsitu" path="res://Scripts/Boss Fight/boss_fight.gd" id="1_1bn4p"]
 [ext_resource type="Texture2D" uid="uid://5n7jyi02kmr6" path="res://Tilesheet/towerDefense_tilesheet.png" id="2_b7223"]
 [ext_resource type="PackedScene" uid="uid://eol4ictg34yn" path="res://Scenes/boss.tscn" id="2_nftbk"]
 [ext_resource type="PackedScene" uid="uid://c6xs2thkhkg2m" path="res://Scenes/jeff.tscn" id="3_b7223"]
-[ext_resource type="Texture2D" uid="uid://dan5aytg0xsmo" path="res://Sprites/more_realistic_ray.png" id="3_nftbk"]
 [ext_resource type="Script" uid="uid://dta6dj2yyycrg" path="res://Scripts/Boss Fight/boss.gd" id="5_top3v"]
 [ext_resource type="Script" uid="uid://cigf6yfw0bjai" path="res://Scripts/UI/health_bar.gd" id="7_fswh6"]
 [ext_resource type="Texture2D" uid="uid://cw3py0cmfr7mm" path="res://Sprites/Emojis/heart.png" id="8_yn8rh"]
+[ext_resource type="FontFile" uid="uid://dm2e0fgq0n617" path="res://Jersey15-Regular.ttf" id="9_hh7y1"]
 [ext_resource type="Texture2D" uid="uid://dvl7al1tfsm38" path="res://Sprites/Emojis/alarm_clock.png" id="9_yn8rh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fswh6"]
@@ -8969,62 +8969,6 @@ texture = ExtResource("2_b7223")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lhg4b")
 
-[sub_resource type="Animation" id="Animation_b7223"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_lhg4b"]
-resource_name = "fade"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0666667, 0.3, 0.566667, 0.833333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.635294), Color(1, 1, 1, 0.298039), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_nftbk"]
-resource_name = "load"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333, 0.566667, 0.933333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.290196), Color(1, 1, 1, 0.498039), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_top3v"]
-_data = {
-&"RESET": SubResource("Animation_b7223"),
-&"fade": SubResource("Animation_lhg4b"),
-&"load": SubResource("Animation_nftbk")
-}
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hh7y1"]
-radius = 29.0759
-height = 202.818
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_fswh6"]
 radius = 29.2746
 
@@ -9050,29 +8994,6 @@ position = Vector2(0, 4.76837e-07)
 tile_map_data = PackedByteArray("AAALABwAAABMABQAAAALAB0AAABMABUAAAALAB4AAABMABYAAAALAB8AAABMABcAAAAMABwAAABNABQAAAAMAB0AAABNABUAAAAMAB4AAABNABYAAAAMAB8AAABNABcAAAANABwAAABOABQAAAANAB0AAABOABUAAAANAB4AAABOABYAAAANAB8AAABOABcAAAAOABwAAABPABQAAAAOAB0AAABPABUAAAAOAB4AAABPABYAAAAOAB8AAABPABcAAAAKAAIAAABMABQAAAAKAAMAAABMABUAAAAKAAQAAABMABYAAAAKAAUAAABMABcAAAALAAIAAABNABQAAAALAAMAAABNABUAAAALAAQAAABNABYAAAALAAUAAABNABcAAAAMAAIAAABOABQAAAAMAAMAAABOABUAAAAMAAQAAABOABYAAAAMAAUAAABOABcAAAANAAIAAABPABQAAAANAAMAAABPABUAAAANAAQAAABPABYAAAANAAUAAABPABcAAAAyABIAAABMABQAAAAyABMAAABMABUAAAAyABQAAABMABYAAAAyABUAAABMABcAAAAzABIAAABNABQAAAAzABMAAABNABUAAAAzABQAAABNABYAAAAzABUAAABNABcAAAA0ABIAAABOABQAAAA0ABMAAABOABUAAAA0ABQAAABOABYAAAA0ABUAAABOABcAAAA1ABIAAABPABQAAAA1ABMAAABPABUAAAA1ABQAAABPABYAAAA1ABUAAABPABcAAAA9ACEAAABUABQAAAA9ACIAAABUABUAAAA9ACMAAABUABYAAAA+ACEAAABVABQAAAA+ACIAAABVABUAAAA+ACMAAABVABYAAAA+ACQAAABVABcAAAA/ACEAAABWABQAAAA/ACIAAABWABUAAAA/ACMAAABWABYAAAA/ACQAAABWABcAAABAACIAAABXABUAAABAACMAAABXABYAAABAACQAAABXABcAAAA+AP7/AABUABQAAAA+AP//AABUABUAAAA+AAAAAABUABYAAAA/AP7/AABVABQAAAA/AP//AABVABUAAAA/AAAAAABVABYAAAA/AAEAAABVABcAAABAAP7/AABWABQAAABAAP//AABWABUAAABAAAAAAABWABYAAABAAAEAAABWABcAAABBAP//AABXABUAAABBAAAAAABXABYAAABBAAEAAABXABcAAAAUAA0AAABUABQAAAAUAA4AAABUABUAAAAUAA8AAABUABYAAAAVAA0AAABVABQAAAAVAA4AAABVABUAAAAVAA8AAABVABYAAAAVABAAAABVABcAAAAWAA0AAABWABQAAAAWAA4AAABWABUAAAAWAA8AAABWABYAAAAWABAAAABWABcAAAAXAA4AAABXABUAAAAXAA8AAABXABYAAAAXABAAAABXABcAAAA=")
 tile_set = SubResource("TileSet_yn8rh")
 
-[node name="ray" type="Sprite2D" parent="."]
-position = Vector2(608.338, 270.035)
-rotation = -2.66163
-scale = Vector2(2.12052, 14.0057)
-skew = -0.00287771
-texture = ExtResource("3_nftbk")
-offset = Vector2(0.383545, -5.07153)
-
-[node name="rayAnim" type="AnimationPlayer" parent="ray"]
-libraries = {
-&"": SubResource("AnimationLibrary_top3v")
-}
-
-[node name="rayTimer" type="Timer" parent="ray"]
-wait_time = 0.7
-autostart = true
-
-[node name="rayArea" type="Area2D" parent="ray"]
-
-[node name="col" type="CollisionShape2D" parent="ray/rayArea"]
-position = Vector2(1.21818, -4.18493)
-shape = SubResource("CapsuleShape2D_hh7y1")
-
 [node name="boss" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_nftbk")]
 position = Vector2(610, 274)
 scale = Vector2(3.31, 3.3)
@@ -9080,6 +9001,10 @@ script = ExtResource("5_top3v")
 player = NodePath("../jeff")
 
 [node name="shootTimer" type="Timer" parent="boss"]
+autostart = true
+
+[node name="speedInc" type="Timer" parent="boss"]
+wait_time = 20.0
 autostart = true
 
 [node name="jeff" parent="." instance=ExtResource("3_b7223")]
@@ -9132,6 +9057,9 @@ offset_left = 884.0
 offset_top = 97.0
 offset_right = 1160.0
 offset_bottom = 205.0
+theme_override_fonts/font = ExtResource("9_hh7y1")
+theme_override_font_sizes/font_size = 50
+vertical_alignment = 1
 
 [node name="TimerClock" type="Sprite2D" parent="playerStats"]
 position = Vector2(843, 145)
@@ -9148,10 +9076,8 @@ one_shot = true
 
 [node name="fightTimer" type="Timer" parent="."]
 
-[connection signal="timeout" from="ray/rayTimer" to="." method="_on_ray_timer_timeout"]
-[connection signal="area_entered" from="ray/rayArea" to="jeff" method="_on_ray_area_entered"]
-[connection signal="area_exited" from="ray/rayArea" to="jeff" method="_on_ray_area_exited"]
 [connection signal="timeout" from="boss/shootTimer" to="boss" method="_on_shoot_timer_timeout"]
+[connection signal="timeout" from="boss/speedInc" to="boss" method="_on_speed_inc_timeout"]
 [connection signal="area_entered" from="bossSpikePlants" to="jeff" method="_on_boss_spike_plants_area_entered"]
 [connection signal="area_exited" from="bossSpikePlants" to="jeff" method="_on_boss_spike_plants_area_exited"]
 [connection signal="timeout" from="ballTimer" to="." method="_on_ball_timer_timeout"]

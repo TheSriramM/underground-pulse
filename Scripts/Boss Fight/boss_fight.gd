@@ -3,8 +3,9 @@ extends Node2D
 var playerSpawn = Vector2(560, 453)
 const rotateDegrees = 20
 var redBallzScene = preload("res://Scenes/red_ballz.tscn")
-var time_played = 60
+var time_played = 75
 @export var timerLabel : Label
+@export var rayTimer : Timer
 @onready var boss: AnimatedSprite2D
 
 func _ready() -> void:

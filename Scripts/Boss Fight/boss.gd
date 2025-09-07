@@ -1,6 +1,7 @@
 extends AnimatedSprite2D
 
 var bulletScene = preload("res://Scenes/player_bullet.tscn")
+var speed = 1
 @export var player : CharacterBody2D
 
 func _ready() -> void:
@@ -11,9 +12,13 @@ func _on_shoot_timer_timeout() -> void:
 	get_tree().current_scene.add_child(bullet)
 
 	bullet.global_position = global_position
+	bullet.speed_scale = speed
 
 	var dir = (player.global_position - global_position).normalized()
 	bullet.direction = dir
 
 	# Rotate bullet to face the direction
 	bullet.rotation = dir.angle()
+
+func _on_speed_inc_timeout() -> void:
+	speed *= 1.25

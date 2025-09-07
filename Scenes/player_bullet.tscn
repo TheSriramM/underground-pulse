@@ -49,8 +49,8 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3m2mg"]
-radius = 85.0
-height = 170.0
+radius = 125.0
+height = 360.0
 
 [node name="particles" type="GPUParticles2D"]
 amount = 75
@@ -70,6 +70,6 @@ libraries = {
 scale = Vector2(0.2, 0.2)
 
 [node name="col" type="CollisionShape2D" parent="bossBulletArea"]
-position = Vector2(-45, -5)
+position = Vector2(-65, -4.76837e-07)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_3m2mg")
