@@ -12,13 +12,14 @@ func _on_shoot_timer_timeout() -> void:
 	get_tree().current_scene.add_child(bullet)
 
 	bullet.global_position = global_position
-	bullet.speed_scale = speed
 
 	var dir = (player.global_position - global_position).normalized()
 	bullet.direction = dir
+	bullet.speed_scale = speed
 
 	# Rotate bullet to face the direction
 	bullet.rotation = dir.angle()
+
 
 func _on_speed_inc_timeout() -> void:
 	speed *= 1.25
