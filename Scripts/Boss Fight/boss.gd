@@ -4,6 +4,9 @@ var bulletScene = preload("res://Scenes/player_bullet.tscn")
 var speed = 1
 @export var player : CharacterBody2D
 
+# This is a fixed version of underground pulse
+# This is the correct version
+
 func _ready() -> void:
 	pass
 

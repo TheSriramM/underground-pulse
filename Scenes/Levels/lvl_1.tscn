@@ -9301,6 +9301,9 @@ position = Vector2(-4533.02, 106.82)
 scale = Vector2(4.09353, 1965.29)
 texture = SubResource("GradientTexture1D_4vyx2")
 
+[node name="darken" type="CanvasModulate" parent="."]
+color = Color(0.654232, 0.654232, 0.654232, 1)
+
 [connection signal="area_entered" from="maze/lvl1_boundary" to="." method="_on_lvl_1_boundary_area_entered"]
 [connection signal="area_entered" from="maze/lvl1_boundary" to="jeff" method="_on_lvl_boundary_area_entered"]
 [connection signal="area_entered" from="enemies/enemy_1/fov_area" to="enemies/enemy_1" method="_on_fov_area_area_entered"]

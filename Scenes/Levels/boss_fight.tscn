@@ -9142,8 +9142,8 @@ theme_override_font_sizes/font_size = 50
 vertical_alignment = 1
 
 [node name="TimerClock" type="Sprite2D" parent="playerStats"]
-position = Vector2(843, 145)
-scale = Vector2(0.449852, 0.40941)
+position = Vector2(844.506, 147.124)
+scale = Vector2(0.468676, 0.435955)
 texture = ExtResource("9_yn8rh")
 
 [node name="ballTimer" type="Timer" parent="."]
