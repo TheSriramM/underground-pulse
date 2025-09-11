@@ -1,6 +1,7 @@
-[gd_scene load_steps=36 format=3 uid="uid://eol4ictg34yn"]
+[gd_scene load_steps=37 format=3 uid="uid://eol4ictg34yn"]
 
 [ext_resource type="Texture2D" uid="uid://brk5k8b8g4866" path="res://UI-assets/Boss/Mecha-stone Golem 0.1/PNG sheet/Character_sheet.png" id="1_k1my7"]
+[ext_resource type="Texture2D" uid="uid://knwmmktq7yo4" path="res://Sprites/cropped_circle_image.png" id="2_wwfse"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3jtfr"]
 atlas = ExtResource("1_k1my7")
@@ -261,3 +262,11 @@ animation = &"death"
 [node name="col" type="CollisionShape2D" parent="rigidbody"]
 position = Vector2(-2, 1)
 shape = SubResource("CircleShape2D_0154r")
+
+[node name="pointLight" type="PointLight2D" parent="."]
+position = Vector2(-1.49999, 4.00002)
+scale = Vector2(10.9634, 12.5626)
+energy = 0.5
+shadow_enabled = true
+texture = ExtResource("2_wwfse")
+texture_scale = 0.3

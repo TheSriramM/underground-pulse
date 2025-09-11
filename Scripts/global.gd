@@ -6,3 +6,4 @@ var maxSpeed = 450
 var maxAccel = 1500
 var level = 1
 var shieldCount = 1 # Change this to 0
+var fightComplete = false

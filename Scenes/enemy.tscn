@@ -1,7 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://dnq77xu8ap7a8"]
+[gd_scene load_steps=6 format=3 uid="uid://dnq77xu8ap7a8"]
 
 [ext_resource type="Texture2D" uid="uid://qcl4rdvr3wi7" path="res://Sprites/purple_enemy.png" id="1_7k104"]
 [ext_resource type="Texture2D" uid="uid://h6i346pyv0f" path="res://Sprites/larger_fov.png" id="2_4gyqm"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1f0kj"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 30.0
+gravity = Vector3(0, 0, 0)
+scale_min = 5.0
+scale_max = 6.0
+color = Color(0.691357, 0.691357, 0.691357, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7k104"]
 radius = 39.0
@@ -18,6 +27,16 @@ position = Vector2(105, 16)
 rotation = -1.5708
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_4gyqm")
+
+[node name="dust" type="GPUParticles2D" parent="fov"]
+position = Vector2(6.40015, -42)
+rotation = 1.5708
+scale = Vector2(0.4, 0.4)
+amount = 16
+lifetime = 1.15
+speed_scale = 1.25
+randomness = 0.05
+process_material = SubResource("ParticleProcessMaterial_1f0kj")
 
 [node name="sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_7k104")

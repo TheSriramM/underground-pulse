@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://426v85jkkete"]
+
+[ext_resource type="Texture2D" uid="uid://yem48peihw82" path="res://Sprites/sigmaOrb.png" id="1_6csqc"]
+[ext_resource type="Texture2D" uid="uid://knwmmktq7yo4" path="res://Sprites/cropped_circle_image.png" id="2_a8e6x"]
+[ext_resource type="Script" uid="uid://dld7rs2vye2et" path="res://Scripts/Boss Fight/sigma_orb.gd" id="2_ukpf0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ukpf0"]
+radius = 52.0096
+
+[node name="sigma_orb" type="Sprite2D"]
+texture = ExtResource("1_6csqc")
+script = ExtResource("2_ukpf0")
+
+[node name="pointLight" type="PointLight2D" parent="."]
+position = Vector2(-1.99998, 3)
+scale = Vector2(13.6416, 14.1426)
+energy = 1.25
+shadow_enabled = true
+texture = ExtResource("2_a8e6x")
+texture_scale = 0.3
+
+[node name="sigmaArea" type="Area2D" parent="."]
+
+[node name="col" type="CollisionShape2D" parent="sigmaArea"]
+position = Vector2(2, 0)
+shape = SubResource("CircleShape2D_ukpf0")
+
+[connection signal="area_entered" from="sigmaArea" to="." method="_on_sigma_area_entered"]

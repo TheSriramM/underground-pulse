@@ -13644,6 +13644,9 @@ texture = ExtResource("11_eu2m6")
 position = Vector2(-0.25, 0.25)
 shape = SubResource("RectangleShape2D_eu2m6")
 
+[node name="darken" type="CanvasModulate" parent="."]
+color = Color(0.733006, 0.733005, 0.733005, 1)
+
 [connection signal="area_entered" from="obstacles/lvl2_spike_plants" to="jeff" method="_on_lvl_2_spike_plants_area_entered"]
 [connection signal="area_exited" from="obstacles/lvl2_spike_plants" to="jeff" method="_on_lvl_2_spike_plants_area_exited"]
 [connection signal="timeout" from="obstacles/red_enemy/shootingTimer" to="obstacles/red_enemy" method="_on_shooting_timer_timeout"]

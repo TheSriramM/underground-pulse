@@ -9053,7 +9053,7 @@ tile_set = SubResource("TileSet_yn8rh")
 
 [node name="ray" type="Sprite2D" parent="."]
 position = Vector2(608.338, 270.035)
-rotation = -2.66163
+rotation = -1.01229
 scale = Vector2(2.12052, 14.0057)
 skew = -0.00287771
 texture = ExtResource("3_nftbk")
@@ -9147,14 +9147,21 @@ scale = Vector2(0.468676, 0.435955)
 texture = ExtResource("9_yn8rh")
 
 [node name="ballTimer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 7.5
 autostart = true
 
 [node name="ballDeletion" type="Timer" parent="."]
 wait_time = 10.0
 one_shot = true
 
+[node name="beanTimer" type="Timer" parent="."]
+wait_time = 20.0
+autostart = true
+
 [node name="fightTimer" type="Timer" parent="."]
+
+[node name="darken" type="CanvasModulate" parent="."]
+color = Color(0.733006, 0.733005, 0.733005, 1)
 
 [connection signal="timeout" from="ray/rayTimer" to="." method="_on_ray_timer_timeout"]
 [connection signal="area_entered" from="ray/rayArea" to="jeff" method="_on_ray_area_entered"]
@@ -9164,4 +9171,5 @@ one_shot = true
 [connection signal="area_entered" from="bossSpikePlants" to="jeff" method="_on_boss_spike_plants_area_entered"]
 [connection signal="area_exited" from="bossSpikePlants" to="jeff" method="_on_boss_spike_plants_area_exited"]
 [connection signal="timeout" from="ballTimer" to="." method="_on_ball_timer_timeout"]
+[connection signal="timeout" from="beanTimer" to="." method="_on_bean_timer_timeout"]
 [connection signal="timeout" from="fightTimer" to="." method="_on_fight_timer_timeout"]
