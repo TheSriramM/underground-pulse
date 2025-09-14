@@ -3,6 +3,9 @@ extends Sprite2D
 @export var speed = 13
 var direction = Vector2.ZERO
 
+func _ready() -> void:
+	pass
+
 #func _ready() -> void:
 	#AudioManager.play("res://Audio/black-ops-2-hd-dsr-50-gun-sound-hq-download.mp3")
 

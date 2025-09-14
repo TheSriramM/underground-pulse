@@ -13,12 +13,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0bi1v")
 
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1157.0
+offset_bottom = 647.0
+color = Color(0.882353, 0.52549, 0.298039, 1)
+
 [node name="scroll" type="Sprite2D" parent="."]
 position = Vector2(575, 311)
 scale = Vector2(3.218, 2.107)
 texture = ExtResource("2_ita5n")
 
 [node name="scrollBackground" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = 288.0
 offset_top = 130.0
 offset_right = 859.0
@@ -26,6 +33,7 @@ offset_bottom = 496.0
 color = Color(0.427451, 0.560784, 0.768627, 1)
 
 [node name="main" type="Label" parent="."]
+layout_mode = 0
 offset_left = 294.0
 offset_top = 130.0
 offset_right = 855.0
@@ -39,6 +47,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="continue" type="Button" parent="."]
+layout_mode = 0
 offset_left = 428.0
 offset_top = 531.0
 offset_right = 717.0

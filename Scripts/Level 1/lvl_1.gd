@@ -2,6 +2,7 @@ extends Node2D
 
 var time_played = 60
 @export var label : Label
+@export var player : CharacterBody2D
 
 func _on_game_timer_timeout() -> void:
 	time_played -= 1

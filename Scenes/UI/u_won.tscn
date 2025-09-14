@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8wyu8mql1dei"]
+[gd_scene load_steps=5 format=3 uid="uid://c8wyu8mql1dei"]
 
 [ext_resource type="Script" uid="uid://ci76tx72iu8x3" path="res://Scripts/UI/u_won.gd" id="1_1wi0n"]
 [ext_resource type="Texture2D" uid="uid://dr7oix8naiju0" path="res://Images/finish_menu_background.png" id="1_40aos"]
 [ext_resource type="Texture2D" uid="uid://sbushi05j51h" path="res://Sprites/trophy_image-removebg-preview.png" id="3_xqamk"]
+[ext_resource type="AudioStream" uid="uid://dcrfuxbqeo7ad" path="res://Audio/man-says-amazing-184036.mp3" id="4_wahc1"]
 
 [node name="u_won" type="Control"]
 layout_mode = 3
@@ -61,6 +62,10 @@ text = "Quit"
 [node name="game_timer" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[node name="amazing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_wahc1")
+autoplay = true
 
 [connection signal="pressed" from="background/buttons/retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="background/buttons/quit" to="." method="_on_quit_pressed"]

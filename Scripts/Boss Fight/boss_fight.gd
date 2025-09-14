@@ -6,11 +6,12 @@ const rotateDegrees = 20
 var redBallzScene = preload("res://Scenes/red_ballz.tscn")
 var healingBeanScene = preload("res://Scenes/healing_bean.tscn")
 var sigmaScene = preload("res://Scenes/sigma_orb.tscn")
-var time_played = 10
+var time_played = 75
 @export var timerLabel : Label
 @onready var boss: AnimatedSprite2D
 
 func _ready() -> void:
+	Music.stop()
 	$jeff/pointLight.hide()
 	$jeff.global_position = playerSpawn
 	boss = get_node("boss")

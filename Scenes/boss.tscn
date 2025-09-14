@@ -270,3 +270,13 @@ energy = 0.5
 shadow_enabled = true
 texture = ExtResource("2_wwfse")
 texture_scale = 0.3
+
+[node name="trail" type="CPUParticles2D" parent="."]
+position = Vector2(0, 3)
+amount = 50
+emission_shape = 1
+emission_sphere_radius = 5.0
+gravity = Vector2(0, 0)
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+color = Color(1, 0.443137, 0.0705882, 1)

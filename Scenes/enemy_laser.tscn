@@ -22,5 +22,15 @@ shape = SubResource("CircleShape2D_swast")
 wait_time = 3.0
 autostart = true
 
+[node name="trail" type="CPUParticles2D" parent="."]
+position = Vector2(4, 2)
+amount = 50
+emission_shape = 1
+emission_sphere_radius = 30.0
+gravity = Vector2(0, 0)
+scale_amount_min = 6.0
+scale_amount_max = 8.0
+color = Color(1, 0.443137, 0.0705882, 1)
+
 [connection signal="area_entered" from="laserArea" to="." method="_on_laser_area_entered"]
 [connection signal="timeout" from="laserTimer" to="." method="_on_laser_timer_timeout"]

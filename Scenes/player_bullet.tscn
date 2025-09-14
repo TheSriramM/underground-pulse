@@ -49,10 +49,11 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3m2mg"]
-radius = 85.0
-height = 170.0
+radius = 115.0
+height = 380.0
 
 [node name="particles" type="GPUParticles2D"]
+scale = Vector2(0.2, 0.2)
 amount = 75
 texture = ExtResource("3_jskx8")
 explosiveness = 0.15
@@ -61,7 +62,6 @@ process_material = SubResource("ParticleProcessMaterial_nocgn")
 script = ExtResource("2_3m2mg")
 
 [node name="anim" type="AnimationPlayer" parent="."]
-root_node = NodePath("")
 libraries = {
 &"": SubResource("AnimationLibrary_nocgn")
 }
@@ -70,6 +70,6 @@ libraries = {
 scale = Vector2(0.2, 0.2)
 
 [node name="col" type="CollisionShape2D" parent="bossBulletArea"]
-position = Vector2(-45, -5)
+position = Vector2(-65, 5)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_3m2mg")

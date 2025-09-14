@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://eov5owyjocsm"]
+[gd_scene load_steps=9 format=3 uid="uid://eov5owyjocsm"]
 
 [ext_resource type="Script" uid="uid://cajrgy3frtmoj" path="res://Scripts/UI/title_screen.gd" id="1_dnytt"]
 [ext_resource type="FontFile" uid="uid://dm2e0fgq0n617" path="res://Jersey15-Regular.ttf" id="2_kyvdy"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://sbushi05j51h" path="res://Sprites/trophy_image-removebg-preview.png" id="6_uv4ns"]
 [ext_resource type="Texture2D" uid="uid://h6i346pyv0f" path="res://Sprites/larger_fov.png" id="7_nd20k"]
 [ext_resource type="Texture2D" uid="uid://qcl4rdvr3wi7" path="res://Sprites/purple_enemy.png" id="8_3txao"]
+[ext_resource type="PackedScene" uid="uid://bgv7ru25axsjt" path="res://Scenes/UI/scene_transition.tscn" id="8_824g0"]
 
 [node name="title_screen" type="Control"]
 layout_mode = 3
@@ -16,6 +17,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dnytt")
+
+[node name="SceneTransition" parent="." instance=ExtResource("8_824g0")]
 
 [node name="background" type="ColorRect" parent="."]
 layout_mode = 0

@@ -9013,10 +9013,11 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_4vyx2"]
 gradient = SubResource("Gradient_j5105")
 
-[node name="lvl_1" type="Node2D" node_paths=PackedStringArray("label")]
+[node name="lvl_1" type="Node2D" node_paths=PackedStringArray("label", "player")]
 scale = Vector2(0.999408, 0.987642)
 script = ExtResource("1_4vyx2")
 label = NodePath("playerStats/timerText")
+player = NodePath("jeff")
 
 [node name="maze" type="Node2D" parent="."]
 

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://clapgutqhvi6c"]
+
+[ext_resource type="AudioStream" uid="uid://bfrh44mgk7x0m" path="res://Audio/space-ambient-cinematic-351304.mp3" id="1_13yx0"]
+
+[node name="music" type="AudioStreamPlayer"]
+stream = ExtResource("1_13yx0")
+volume_db = -20.0
+autoplay = true

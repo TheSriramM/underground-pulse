@@ -47,9 +47,9 @@ func _on_player_area_entered(area: Area2D) -> void:
 	if area.name == "laserArea":
 		health -= 20
 		if health > 0:
+			$ough.play()
 			healthChanged.emit()
 		else:
-			AudioManager.play("res://Audio/ivan asmr.wav")
 			get_tree().call_deferred("change_scene_to_file", "res://Scenes/UI/u_died.tscn")
 	if area.name == "bossBulletArea":
 		bossHit = true
@@ -73,17 +73,20 @@ func slow_down():
 	health -= 0.1
 	max_speed = 200
 	if health > 0:
+		$ough.play()
 		healthChanged.emit()
+		if health <= 10:
+			$cooked.play()
 	else:
-		AudioManager.play("res://Audio/ivan asmr.wav")
 		get_tree().call_deferred("change_scene_to_file", "res://Scenes/UI/u_died.tscn")
 
 func slow_damage():
 	health -= 0.165
 	if health > 0:
 		healthChanged.emit()
+		if health <= 10:
+			$cooked.play()
 	else:
-		AudioManager.play("res://Audio/ivan asmr.wav")
 		get_tree().call_deferred("change_scene_to_file", "res://Scenes/UI/u_died.tscn")
 
 func _on_spiky_plant_area_entered(area: Area2D) -> void:

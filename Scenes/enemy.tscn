@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnq77xu8ap7a8"]
+[gd_scene load_steps=8 format=3 uid="uid://dnq77xu8ap7a8"]
 
 [ext_resource type="Texture2D" uid="uid://qcl4rdvr3wi7" path="res://Sprites/purple_enemy.png" id="1_7k104"]
 [ext_resource type="Texture2D" uid="uid://h6i346pyv0f" path="res://Sprites/larger_fov.png" id="2_4gyqm"]
+[ext_resource type="Script" uid="uid://cbpcxay7l7rde" path="res://Scripts/Enemy Areas/enemy_sound_detection.gd" id="3_287tu"]
+[ext_resource type="AudioStream" uid="uid://blt7fdlbn5j1o" path="res://Audio/surprise-sound-effect-99300.mp3" id="4_0830c"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1f0kj"]
 particle_flag_disable_z = true
@@ -52,3 +54,18 @@ visible = false
 [node name="enemyCol" type="CollisionShape2D" parent="enemyArea"]
 position = Vector2(2, 2)
 shape = SubResource("CircleShape2D_4gyqm")
+
+[node name="enemySoundDetection" type="Area2D" parent="."]
+script = ExtResource("3_287tu")
+
+[node name="col" type="CollisionPolygon2D" parent="enemySoundDetection"]
+position = Vector2(105, 16)
+rotation = -1.5708
+scale = Vector2(2.5, 2.5)
+polygon = PackedVector2Array(20.4, -42.4, 29.5, -15.5, 43, 9, 51, 22.5, 51, 34.5, 45, 43.5, 36, 49.5, 24, 53.5, -19.5, 54.5, -36.5, 48.5, -48.5, 37.5, -50.5, 34, -50, 20.8, -37, -2, -27, -18.5, -11.2, -40.8, -8, -50.8, 4, -55.6, 10.4, -54.4, 15.6, -50.8)
+
+[node name="surprise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_0830c")
+volume_db = -15.0
+
+[connection signal="area_entered" from="enemySoundDetection" to="enemySoundDetection" method="_on_area_entered"]
