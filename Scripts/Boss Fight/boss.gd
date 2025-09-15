@@ -26,4 +26,4 @@ func _on_shoot_timer_timeout() -> void:
 
 
 func _on_speed_inc_timeout() -> void:
-	speed *= 1.25
+	speed *= 1.5

@@ -4,6 +4,7 @@ var right = true
 var playerEntered = false
 var speed = 225
 var bulletScene = preload("res://Scenes/enemy_laser.tscn")
+@export var player : CharacterBody2D
 
 func _ready() -> void:
 	add_to_group("enemies")

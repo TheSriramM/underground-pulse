@@ -7,6 +7,7 @@ var fov_rot = Vector2(-95, 0)
 var lvl1_boundary_exceeded = false
 var enem_annoyed = false
 var bulletScene = preload("res://Scenes/enemy_laser.tscn")
+@export var player : CharacterBody2D
 
 func _ready() -> void:
 	add_to_group("enemies")
@@ -55,6 +56,6 @@ func _on_shooting_rate_timeout() -> void:
 		var bullet = bulletScene.instantiate()
 		call_deferred("add_child", bullet)
 		# Get the direction towards the player
-		bullet.set_deferred("direction", global_position.direction_to(get_parent().get_parent().get_child(2).global_position))
+		bullet.set_deferred("direction", global_position.direction_to(player.global_position))
 		bullet.position = position
 		bullet.show()

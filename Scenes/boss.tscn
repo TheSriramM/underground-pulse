@@ -264,8 +264,8 @@ position = Vector2(-2, 1)
 shape = SubResource("CircleShape2D_0154r")
 
 [node name="pointLight" type="PointLight2D" parent="."]
-position = Vector2(-1.49999, 4.00002)
-scale = Vector2(10.9634, 12.5626)
+position = Vector2(2.99995, 3.00005)
+scale = Vector2(18.3044, 20.2698)
 energy = 0.5
 shadow_enabled = true
 texture = ExtResource("2_wwfse")
