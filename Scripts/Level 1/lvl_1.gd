@@ -1,6 +1,7 @@
 extends Node2D
 
 var time_played = 60
+var paused = false
 @export var label : Label
 @export var player : CharacterBody2D
 

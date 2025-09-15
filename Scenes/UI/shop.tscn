@@ -22,6 +22,7 @@ grow_vertical = 2
 script = ExtResource("1_l5jkk")
 
 [node name="background" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = -24.0
 offset_top = -5.0
 offset_right = 1133.0
