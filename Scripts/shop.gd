@@ -6,7 +6,8 @@ func _ready() -> void:
 
 func _on_continue_pressed() -> void:
 	Global.level += 1
-	get_tree().change_scene_to_file("res://Scenes/UI/lvl_2_transition.tscn")
+	SceneTransition.call_deferred("load_scene", "res://Scenes/UI/lvl_2_transition.tscn")
+	#get_tree().change_scene_to_file("res://Scenes/UI/lvl_2_transition.tscn")
 
 func _on_speed_button_pressed() -> void:
 	if Global.money >= 20:

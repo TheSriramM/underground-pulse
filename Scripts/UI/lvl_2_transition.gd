@@ -28,4 +28,5 @@ func _process(delta: float) -> void:
 
 func _on_continue_pressed() -> void:
 	if cur_text >= 2:
-		get_tree().change_scene_to_file("res://Scenes/Levels/lvl_2.tscn")
+		SceneTransition.call_deferred("load_scene", "res://Scenes/Levels/lvl_2.tscn")
+		#get_tree().change_scene_to_file("res://Scenes/Levels/lvl_2.tscn")

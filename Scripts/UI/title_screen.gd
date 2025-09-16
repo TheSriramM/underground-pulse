@@ -2,13 +2,16 @@ extends Control
 
 func _on_play_pressed() -> void:
 	Global.level = 1
-	get_tree().change_scene_to_file("res://Scenes/Levels/lvl_1.tscn")
+	SceneTransition.load_scene("res://Scenes/Levels/lvl_1.tscn")
+	#get_tree().change_scene_to_file("res://Scenes/Levels/lvl_1.tscn")
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
 
 func _on_instructions_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/UI/interactive_tut.tscn")
+	SceneTransition.load_scene("res://Scenes/UI/interactive_tut.tscn")
+	#get_tree().change_scene_to_file("res://Scenes/UI/interactive_tut.tscn")
 
 func _on_tutorial_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Levels/tutorial.tscn")
+	SceneTransition.load_scene("res://Scenes/Levels/tutorial.tscn")
+	#get_tree().change_scene_to_file("res://Scenes/Levels/tutorial.tscn")

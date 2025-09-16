@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Global="*res://Scripts/global.gd"
 AudioManager="*res://Scripts/audioManager.gd"
 Music="*res://Scenes/Music/music.tscn"
+SceneTransition="*res://Scenes/UI/scene_transition.tscn"
 
 [display]
 

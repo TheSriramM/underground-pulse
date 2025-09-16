@@ -36,12 +36,14 @@ color = Color(0.427451, 0.560784, 0.768627, 1)
 layout_mode = 0
 offset_left = 294.0
 offset_top = 130.0
-offset_right = 855.0
-offset_bottom = 491.0
+offset_right = 859.0
+offset_bottom = 497.0
 theme_override_fonts/font = ExtResource("3_mvw61")
 theme_override_font_sizes/font_size = 40
 text = "You have found the boss
-Stay away from the red circles and the boss's rays"
+Stay away from the red circles and the boss's rays
+Obtaining the healing bean increases your health
+Survive 75 seconds and the boss will collapse due to the power of the orb"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

@@ -50,7 +50,8 @@ func _on_player_area_entered(area: Area2D) -> void:
 			$ough.play()
 			healthChanged.emit()
 		else:
-			get_tree().call_deferred("change_scene_to_file", "res://Scenes/UI/u_died.tscn")
+			SceneTransition.call_deferred("load_scene", "res://Scenes/UI/u_died.tscn")
+			#get_tree().call_deferred("change_scene_to_file", "res://Scenes/UI/u_died.tscn")
 	if area.name == "bossBulletArea":
 		bossHit = true
 	if area.name == "ballzArea":
@@ -66,7 +67,8 @@ func _on_player_area_entered(area: Area2D) -> void:
 
 func _on_lvl_boundary_area_entered(area: Area2D) -> void:
 	if area.name == "playerArea":
-		get_tree().call_deferred("change_scene_to_file", "res://Scenes/UI/shop.tscn")
+		SceneTransition.call_deferred("load_scene", "res://Scenes/UI/shop.tscn")
+		#get_tree().call_deferred("change_scene_to_file", "res://Scenes/UI/shop.tscn")
 
 func slow_down():
 	print("e")
@@ -78,7 +80,8 @@ func slow_down():
 		if health <= 10:
 			$cooked.play()
 	else:
-		get_tree().call_deferred("change_scene_to_file", "res://Scenes/UI/u_died.tscn")
+		SceneTransition.call_deferred("load_scene", "res://Scenes/UI/u_died.tscn")
+		#get_tree().call_deferred("change_scene_to_file", "res://Scenes/UI/u_died.tscn")
 
 func slow_damage():
 	health -= 0.165
@@ -87,7 +90,8 @@ func slow_damage():
 		if health <= 10:
 			$cooked.play()
 	else:
-		get_tree().call_deferred("change_scene_to_file", "res://Scenes/UI/u_died.tscn")
+		SceneTransition.call_deferred("load_scene", "res://Scenes/UI/u_died.tscn")
+		#get_tree().call_deferred("change_scene_to_file", "res://Scenes/UI/u_died.tscn")
 
 func _on_spiky_plant_area_entered(area: Area2D) -> void:
 	if area.name == "playerArea":
@@ -107,7 +111,8 @@ func _on_lvl_2_spike_plants_area_exited(area: Area2D) -> void:
 
 func _on_scroll_area_entered(area: Area2D) -> void:
 	if area.name == "playerArea":
-		get_tree().call_deferred("change_scene_to_file", "res://Scenes/UI/boss_inst.tscn")
+		SceneTransition.call_deferred("load_scene", "res://Scenes/UI/boss_inst.tscn")
+		#get_tree().call_deferred("change_scene_to_file", "res://Scenes/UI/boss_inst.tscn")
 
 func _on_tutorial_spiky_plant_area_entered(area: Area2D) -> void:
 	if area.name == "playerArea":
@@ -120,7 +125,8 @@ func _on_tutorial_spiky_plant_area_exited(area: Area2D) -> void:
 
 func _on_teleport_area_entered(area: Area2D) -> void:
 	if area.name == "playerArea":
-		get_tree().call_deferred("change_scene_to_file", "res://Scenes/Ui/tut_transition.tscn")
+		SceneTransition.call_deferred("load_scene", "res://Scenes/Ui/tut_transition.tscn")
+		#get_tree().call_deferred("change_scene_to_file", "res://Scenes/Ui/tut_transition.tscn")
 
 func _on_ray_area_entered(area: Area2D) -> void:
 	if area.name == "playerArea":

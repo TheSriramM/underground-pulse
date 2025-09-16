@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgv7ru25axsjt"]
+[gd_scene load_steps=6 format=3 uid="uid://bgv7ru25axsjt"]
+
+[ext_resource type="Script" uid="uid://d33ywp43v40jn" path="res://Scripts/UI/scene_transition.gd" id="1_w4kej"]
 
 [sub_resource type="Animation" id="Animation_w4kej"]
 length = 0.001
@@ -13,6 +15,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_fdu45"]
@@ -30,6 +44,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0001, 0.0333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, true]
+}
 
 [sub_resource type="Animation" id="Animation_lxr7h"]
 resource_name = "fade_out"
@@ -46,6 +72,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.466667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fbbep"]
 _data = {
@@ -54,13 +92,15 @@ _data = {
 &"fade_out": SubResource("Animation_lxr7h")
 }
 
-[node name="SceneTransition" type="Node2D"]
+[node name="SceneTransition" type="CanvasLayer"]
+script = ExtResource("1_w4kej")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -184.0
 offset_top = -160.0
 offset_right = 1408.0
 offset_bottom = 872.0
+mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
 [node name="anim" type="AnimationPlayer" parent="."]
